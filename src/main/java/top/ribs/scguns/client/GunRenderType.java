@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 /**
  * Author: MrCrayfish
@@ -13,7 +13,7 @@ import top.ribs.scguns.Reference;
 
 public final class GunRenderType extends RenderType {
     private static final RenderType BULLET_TRAIL = RenderType.create(
-            Reference.MOD_ID + ":projectile_trail",
+            NeoScorchedGunsMain.MODID + ":projectile_trail",
             DefaultVertexFormat.POSITION_COLOR_LIGHTMAP,
             VertexFormat.Mode.QUADS,
             256,
@@ -36,7 +36,7 @@ public final class GunRenderType extends RenderType {
 
     public static RenderType getMuzzleFlash(ResourceLocation flashTexture) {
         return RenderType.create(
-                Reference.MOD_ID + ":muzzle_flash",
+                NeoScorchedGunsMain.MODID + ":muzzle_flash",
                 DefaultVertexFormat.POSITION_COLOR_TEX_LIGHTMAP,
                 VertexFormat.Mode.QUADS,
                 256,

@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.SwarmEntity;
 
 public class SwarmRenderer extends MobRenderer<SwarmEntity, SwarmModel<SwarmEntity>> {
@@ -15,7 +15,7 @@ public class SwarmRenderer extends MobRenderer<SwarmEntity, SwarmModel<SwarmEnti
 
     @Override
     public ResourceLocation getTextureLocation(SwarmEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/swarm.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/swarm.png");
     }
 
     @Override

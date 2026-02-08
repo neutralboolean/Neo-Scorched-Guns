@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.HiveEntity;
 
 public class HiveRenderer extends MobRenderer<HiveEntity, HiveModel<HiveEntity>> {
@@ -15,7 +15,7 @@ public class HiveRenderer extends MobRenderer<HiveEntity, HiveModel<HiveEntity>>
 
     @Override
     public ResourceLocation getTextureLocation(HiveEntity hiveEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/hive.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/hive.png");
     }
 
     @Override

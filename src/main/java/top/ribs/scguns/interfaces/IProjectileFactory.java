@@ -3,7 +3,7 @@ package top.ribs.scguns.interfaces;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.ProjectileManager;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;

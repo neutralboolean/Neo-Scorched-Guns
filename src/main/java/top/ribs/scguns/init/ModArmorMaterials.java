@@ -1,89 +1,101 @@
 package top.ribs.scguns.init;
 
+import net.minecraft.Util;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.init.ModItems;
+import net.neoforged.fml.common.EventBusSubscriber;
+import top.ribs.scguns.NeoScorchedGunsMain;
+
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Supplier;
 
-public enum ModArmorMaterials implements ArmorMaterial {
+@EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
+public class ModArmorMaterials {
+    // protection ARRAY { BOOTS, LEGGINGS, CHESTPLATE, HELMET(, BODY) }
+    public static Holder<ArmorMaterial> ADRIEN = registerArmorMaterial(
+            "adrien",
+            new int[]{ 3, 6, 6, 4 },
+            8,
+            SoundEvents.ARMOR_EQUIP_IRON,
+            () -> Ingredient.of(ModItems.TREATED_IRON_INGOT.get()),
+            0.5f,
+            0.1f);
+    public static Holder<ArmorMaterial> ANTHRALITE = registerArmorMaterial(
+            "anthralite",
+            new int[]{ 2, 4, 3, 2 },
+            12,
+            SoundEvents.ARMOR_EQUIP_GOLD,
+            () -> Ingredient.of(ModItems.ANTHRALITE_INGOT.get()),
+            1.0f,
+            0.05f);
+    public static Holder<ArmorMaterial> DIAMOND_STEEL = registerArmorMaterial(
+            "diamond_steel",
+            new int[]{ 3, 6, 5, 3 },
+            16,
+            SoundEvents.ARMOR_EQUIP_DIAMOND,
+            () -> Ingredient.of(ModItems.DIAMOND_STEEL_INGOT.get()),
+            2.0f,
+            0.05f);
+    public static Holder<ArmorMaterial> TREATED_BRASS = registerArmorMaterial(
+            "treated_brass",
+            new int[]{ 4, 6, 5, 4 },
+            10,
+            SoundEvents.ARMOR_EQUIP_IRON,
+            () -> Ingredient.of(ModItems.TREATED_BRASS_INGOT.get()),
+            0.0f,
+            0.2f);
+    public static Holder<ArmorMaterial> ANCIENT_BRASS = registerArmorMaterial(
+            "ancient_brass", new int[]{ 3, 5, 4, 3 },
+            10,
+            SoundEvents.ARMOR_EQUIP_IRON,
+            () -> Ingredient.of(ModItems.ANCIENT_BRASS.get()),
+            0.0f,
+            0.15f);
+    public static Holder<ArmorMaterial> EXO_SUIT = registerArmorMaterial(
+            "exo_suit",
+            new int[]{ 1, 1, 1, 1 },
+            6,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            () -> Ingredient.of(ModItems.TREATED_IRON_INGOT.get()),
+            0.0f,
+            0.0f);
 
-    ADRIEN("adrien", 22, new int[]{ 3, 6, 6, 4 }, 8,
-            SoundEvents.ARMOR_EQUIP_IRON, 0.5f, 0.1f, () -> Ingredient.of(ModItems.TREATED_IRON_INGOT.get())),
-    ANTHRALITE("anthralite", 32, new int[]{ 2, 4, 3, 2 }, 12,
-            SoundEvents.ARMOR_EQUIP_GOLD, 1.0f, 0.05f, () -> Ingredient.of(ModItems.ANTHRALITE_INGOT.get())),
-    DIAMOND_STEEL("diamond_steel", 36, new int[]{ 3, 6, 5, 3 }, 16,
-            SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0f, 0.05f, () -> Ingredient.of(ModItems.DIAMOND_STEEL_INGOT.get())),
-    TREATED_BRASS("treated_brass", 30, new int[]{ 4, 6, 5, 4 }, 10,
-            SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.2f, () -> Ingredient.of(ModItems.TREATED_BRASS_INGOT.get())),
-   ANCIENT_BRASS("ancient_brass", 16, new int[]{ 3, 5, 4, 3 }, 10,
-            SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.15f, () -> Ingredient.of(ModItems.ANCIENT_BRASS.get())),
-    EXO_SUIT("exo_suit", 200, new int[]{ 1, 1, 1, 1 }, 6,
-            SoundEvents.ARMOR_EQUIP_NETHERITE, 0.0f, 0.0f, () -> Ingredient.of(ModItems.TREATED_IRON_INGOT.get()));
 
-    private final String name;
-    private final int durabilityMultiplier;
-    private final int[] protectionAmounts;
-    private final int enchantmentValue;
-    private final SoundEvent equipSound;
-    private final float toughness;
-    private final float knockbackResistance;
-    private final Supplier<Ingredient> repairIngredient;
-
+    // TODO: These durabilities probably have been ported to the Armor directly
     private static final int[] BASE_DURABILITY = { 8, 12, 12, 9 };
+    // ADRIEN, ANTHRALITE, DIAMOND_STEEL, TREATED_BRASS, ANCIENT_BRASS, EXO_SUIT
+    private static final int[] DURABILITY_MULT = { 22, 32, 36, 30, 16, 200 };
 
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound,
-                      float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        this.name = name;
-        this.durabilityMultiplier = durabilityMultiplier;
-        this.protectionAmounts = protectionAmounts;
-        this.enchantmentValue = enchantmentValue;
-        this.equipSound = equipSound;
-        this.toughness = toughness;
-        this.knockbackResistance = knockbackResistance;
-        this.repairIngredient = repairIngredient;
-    }
+    private static Holder<ArmorMaterial> registerArmorMaterial(String name,
+                                                               int[] protectionAmounts,
+                                                               int enchantmentValue,
+                                                               Holder<SoundEvent> equipSound,
+                                                               Supplier<Ingredient> repairIngredient,
+                                                               float toughness,
+                                                               float knockbackResistance) {
+        Map<ArmorItem.Type, Integer> defenseMap = Util.make(new EnumMap<ArmorItem.Type, Integer>(ArmorItem.Type.class), armorMap -> {
+            armorMap.put(ArmorItem.Type.BOOTS, protectionAmounts[0]);
+            armorMap.put(ArmorItem.Type.LEGGINGS, protectionAmounts[1]);
+            armorMap.put(ArmorItem.Type.CHESTPLATE, protectionAmounts[2]);
+            armorMap.put(ArmorItem.Type.HELMET, protectionAmounts[3]);
+        });
+        ResourceLocation materialLocation = ResourceLocation.fromNamespaceAndPath(NeoScorchedGunsMain.MODID, name);
+        List<ArmorMaterial.Layer> layerList = List.of(new ArmorMaterial.Layer(materialLocation))
 
-    @Override
-    public int getDurabilityForType(ArmorItem.Type pType) {
-        return BASE_DURABILITY[pType.ordinal()] * this.durabilityMultiplier;
-    }
-
-    @Override
-    public int getDefenseForType(ArmorItem.Type pType) {
-        return this.protectionAmounts[pType.ordinal()];
-    }
-
-    @Override
-    public int getEnchantmentValue() {
-        return enchantmentValue;
-    }
-
-    @Override
-    public SoundEvent getEquipSound() {
-        return this.equipSound;
-    }
-
-    @Override
-    public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
-    }
-
-    @Override
-    public String getName() {
-        return Reference.MOD_ID + ":" + this.name;
-    }
-
-    @Override
-    public float getToughness() {
-        return this.toughness;
-    }
-
-    @Override
-    public float getKnockbackResistance() {
-        return this.knockbackResistance;
+        return Registry.registerForHolder(
+                BuiltInRegistries.ARMOR_MATERIAL,
+                materialLocation,
+                new ArmorMaterial(defenseMap, enchantmentValue, equipSound, repairIngredient, layerList, toughness, knockbackResistance));
     }
 }

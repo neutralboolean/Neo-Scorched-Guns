@@ -2,10 +2,8 @@ package top.ribs.scguns.client.handler;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
@@ -16,11 +14,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.render.crosshair.*;
 
 import top.ribs.scguns.event.GunFireEvent;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -40,18 +38,18 @@ public class CrosshairHandler {
     private Crosshair currentCrosshair = null;
 
     private CrosshairHandler() {
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "better_default")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "circle")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "filled_circle"), false));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "square")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "round")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "arrow")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "dot")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "box")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "hit_marker")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "line")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "t")));
-        this.register(new TexturedCrosshair(new ResourceLocation(Reference.MOD_ID, "smiley")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "better_default")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "circle")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "filled_circle"), false));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "square")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "round")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "arrow")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "dot")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "box")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "hit_marker")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "line")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "t")));
+        this.register(new TexturedCrosshair(new ResourceLocation(NeoScorchedGunsMain.MODID, "smiley")));
         this.register(new TechCrosshair());
         this.register(new DynamicCrosshair());
     }
@@ -165,7 +163,7 @@ public class CrosshairHandler {
 
     public static void onConfigReload(ModConfigEvent.Reloading event) {
         ModConfig config = event.getConfig();
-        if (config.getType() == ModConfig.Type.CLIENT && config.getModId().equals(Reference.MOD_ID)) {
+        if (config.getType() == ModConfig.Type.CLIENT && config.getModId().equals(NeoScorchedGunsMain.MODID)) {
             ResourceLocation id = ResourceLocation.tryParse(Config.CLIENT.display.crosshair.get());
             if (id != null) {
                 CrosshairHandler.get().setCrosshair(id);

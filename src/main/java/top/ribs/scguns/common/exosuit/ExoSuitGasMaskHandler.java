@@ -7,14 +7,14 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.block.SulfurVentBlock;
 import top.ribs.scguns.item.exosuit.GasMaskModuleItem;
 
 /**
  * Handles gas mask functionality for ExoSuit helmets
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ExoSuitGasMaskHandler {
 
     private static final int CHECK_INTERVAL = 20;

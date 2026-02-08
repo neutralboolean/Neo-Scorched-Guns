@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.ScampRocketEntity;
 
 public class ScampRocketRenderer extends EntityRenderer<ScampRocketEntity> {
@@ -21,7 +21,7 @@ public class ScampRocketRenderer extends EntityRenderer<ScampRocketEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(ScampRocketEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/scamp_rocket.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/scamp_rocket.png");
     }
 
     @Override

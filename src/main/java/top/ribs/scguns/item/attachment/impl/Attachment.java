@@ -3,12 +3,9 @@ package top.ribs.scguns.item.attachment.impl;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.interfaces.IGunModifier;
 import top.ribs.scguns.item.attachment.IAttachment;
 import top.ribs.scguns.common.GunModifiers;
@@ -17,7 +14,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
 public abstract class Attachment
 {
     protected IGunModifier[] modifiers;

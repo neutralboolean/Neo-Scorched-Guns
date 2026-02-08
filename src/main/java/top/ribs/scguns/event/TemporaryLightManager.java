@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.init.ModBlocks;
 import top.ribs.scguns.block.TemporaryLightBlock;
 
@@ -63,7 +63,7 @@ public class TemporaryLightManager {
             }
 
         } catch (Exception e) {
-            ScorchedGuns.LOGGER.error("Error in addTemporaryLight: " + e.getMessage(), e);
+            NeoScorchedGunsMain.LOGGER.error("Error in addTemporaryLight: " + e.getMessage(), e);
         }
     }
 
@@ -84,10 +84,10 @@ public class TemporaryLightManager {
         if (level == null || level.isClientSide) return;
 
         try {
-            ScorchedGuns.LOGGER.info("Emergency cleanup called for temporary lights in dimension: " +
+            NeoScorchedGunsMain.LOGGER.info("Emergency cleanup called for temporary lights in dimension: " +
                     level.dimension().location());
         } catch (Exception e) {
-            ScorchedGuns.LOGGER.error("Error during emergency cleanup: " + e.getMessage(), e);
+            NeoScorchedGunsMain.LOGGER.error("Error during emergency cleanup: " + e.getMessage(), e);
         }
     }
 }

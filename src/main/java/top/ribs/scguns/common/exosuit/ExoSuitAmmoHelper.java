@@ -6,12 +6,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.ItemStackHandler;
-import top.ribs.scguns.item.AmmoBoxItem;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.AmmoBoxItem;
 import top.ribs.scguns.item.animated.ExoSuitItem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ExoSuitAmmoHelper {
 

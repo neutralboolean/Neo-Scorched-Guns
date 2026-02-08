@@ -2,13 +2,8 @@ package top.ribs.scguns.network.message;
 
 import com.mrcrayfish.framework.api.network.MessageContext;
 import com.mrcrayfish.framework.api.network.message.PlayMessage;
-import net.minecraft.client.Minecraft;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.item.ItemStack;
 import top.ribs.scguns.client.network.ClientPlayHandler;
-import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
 
 public class S2CMessageReload extends PlayMessage<S2CMessageReload> {
     private boolean reloading;

@@ -1,7 +1,7 @@
 package top.ribs.scguns.common;
 
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,17 +13,17 @@ public record ReloadType(ResourceLocation id) {
     /**
      * A reload system that works with ammo items individually
      */
-    public static final ReloadType MANUAL = new ReloadType(new ResourceLocation(Reference.MOD_ID, "manual"));
+    public static final ReloadType MANUAL = new ReloadType(new ResourceLocation(NeoScorchedGunsMain.MODID, "manual"));
 
     /**
      * A reload system that works with magazines (stacks of items)
      */
-    public static final ReloadType MAG_FED = new ReloadType(new ResourceLocation(Reference.MOD_ID, "mag_fed"));
+    public static final ReloadType MAG_FED = new ReloadType(new ResourceLocation(NeoScorchedGunsMain.MODID, "mag_fed"));
 
     /**
      * A reload system which takes 1 item to fill an entire gun
      */
-    public static final ReloadType SINGLE_ITEM = new ReloadType(new ResourceLocation(Reference.MOD_ID, "single_item"));
+    public static final ReloadType SINGLE_ITEM = new ReloadType(new ResourceLocation(NeoScorchedGunsMain.MODID, "single_item"));
 
     /**
      * The reload system map.

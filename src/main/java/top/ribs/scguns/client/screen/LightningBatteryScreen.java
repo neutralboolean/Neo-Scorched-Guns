@@ -7,15 +7,14 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import org.jetbrains.annotations.NotNull;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 public class LightningBatteryScreen extends AbstractContainerScreen<LightningBatteryMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Reference.MOD_ID, "textures/gui/lightning_battery_gui.png");
+            new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/lightning_battery_gui.png");
     private static final int BAR_WIDTH = 7;
     private static final int BAR_HEIGHT = 42;
     private static final int BAR_X = 44;

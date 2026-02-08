@@ -9,9 +9,9 @@ import org.apache.commons.lang3.mutable.MutableInt;
 import org.apache.commons.lang3.mutable.MutableLong;
 import org.apache.commons.lang3.tuple.Pair;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ import java.util.WeakHashMap;
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class SpreadTracker
 {
     private static final Map<Player, SpreadTracker> TRACKER_MAP = new WeakHashMap<>();

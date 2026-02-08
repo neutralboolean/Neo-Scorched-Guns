@@ -11,7 +11,7 @@ import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.ReloadTracker;
 import top.ribs.scguns.common.ReloadType;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.network.PacketHandler;
 

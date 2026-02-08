@@ -11,14 +11,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.SpecialModels;
 import top.ribs.scguns.client.render.gun.IOverrideModel;
 import top.ribs.scguns.client.util.RenderUtil;
-import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.event.GunFireEvent;
-import top.ribs.scguns.init.ModItems;
-import top.ribs.scguns.item.attachment.IAttachment;
 
 /**
  * Since we want to have an animation for the charging handle, we will be overriding the standard model rendering.
@@ -71,7 +68,7 @@ public class UltraKnightHawkModel implements IOverrideModel {
         return 1 - Math.pow(1 - x, 4);
     }
 
-    @Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
     public static class GunFireEventKnightHandler {
         private static int shotCount = 0;
 

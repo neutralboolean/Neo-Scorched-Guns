@@ -9,7 +9,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.joml.Matrix4f;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.handler.AimingHandler;
 
 /**
@@ -17,8 +17,8 @@ import top.ribs.scguns.client.handler.AimingHandler;
  */
 public class TechCrosshair extends Crosshair
 {
-    private static final ResourceLocation TECH_CROSSHAIR = new ResourceLocation(Reference.MOD_ID, "textures/crosshair/tech.png");
-    private static final ResourceLocation DOT_CROSSHAIR = new ResourceLocation(Reference.MOD_ID, "textures/crosshair/dot.png");
+    private static final ResourceLocation TECH_CROSSHAIR = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/crosshair/tech.png");
+    private static final ResourceLocation DOT_CROSSHAIR = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/crosshair/dot.png");
 
     private float scale;
     private float prevScale;
@@ -27,7 +27,7 @@ public class TechCrosshair extends Crosshair
 
     public TechCrosshair()
     {
-        super(new ResourceLocation(Reference.MOD_ID, "tech"));
+        super(new ResourceLocation(NeoScorchedGunsMain.MODID, "tech"));
     }
 
     @Override

@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.Mod;
 import top.ribs.scguns.init.ModEnchantments;
 import top.ribs.scguns.init.ModSyncedDataKeys;
 import top.ribs.scguns.init.ModTags;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.animated.ExoSuitItem;
 
 import java.util.UUID;

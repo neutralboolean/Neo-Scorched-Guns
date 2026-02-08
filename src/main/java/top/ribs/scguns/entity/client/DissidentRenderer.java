@@ -3,7 +3,7 @@ package top.ribs.scguns.entity.client;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.DissidentEntity;
 
 public class DissidentRenderer extends MobRenderer<DissidentEntity, DissidentModel<DissidentEntity>> {
@@ -12,7 +12,7 @@ public class DissidentRenderer extends MobRenderer<DissidentEntity, DissidentMod
     }
     @Override
     public ResourceLocation getTextureLocation(DissidentEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/dissident.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/dissident.png");
     }
 }
 

@@ -5,7 +5,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -24,21 +23,16 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import top.ribs.scguns.Config;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.init.ModDamageTypes;
-import top.ribs.scguns.init.ModParticleTypes;
 import top.ribs.scguns.init.ModTags;
 import top.ribs.scguns.interfaces.IDamageable;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageBlood;
 import top.ribs.scguns.network.message.S2CMessageProjectileHitBlock;
-import top.ribs.scguns.network.message.S2CMessageProjectileHitEntity;
 import top.ribs.scguns.particles.TrailData;
-import top.ribs.scguns.util.GunEnchantmentHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShatterRoundProjectileEntity extends ProjectileEntity {

@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,10 +15,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ModPointOfInterestTypes
 {
-    public static final DeferredRegister<PoiType> REGISTER = DeferredRegister.create(ForgeRegistries.POI_TYPES, Reference.MOD_ID);
+    public static final DeferredRegister<PoiType> POIS = DeferredRegister.create(ForgeRegistries.POI_TYPES, NeoScorchedGunsMain.MODID);
 
 
     private static RegistryObject<PoiType> register(String name, RegistryObject<Block> block, int maxFreeTickets) {
@@ -32,7 +32,7 @@ public final class ModPointOfInterestTypes
     }
 
     private static RegistryObject<PoiType> register(String name, List<RegistryObject<Block>> blocks, int maxFreeTickets) {
-        return REGISTER.register(name, () -> {
+        return POIS.register(name, () -> {
             Set<BlockState> blockStates = new HashSet<>();
             for (RegistryObject<Block> block : blocks) {
                 blockStates.addAll(block.get().getStateDefinition().getPossibleStates());

@@ -3,7 +3,6 @@ package top.ribs.scguns.mixin.client;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +16,7 @@ import top.ribs.scguns.client.render.pose.AimPose;
 import top.ribs.scguns.client.render.pose.LimbPose;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.event.VehicleDetectionHandler;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import java.lang.reflect.Method;
 
 @Mixin(value = PlayerModel.class, priority = 1100)

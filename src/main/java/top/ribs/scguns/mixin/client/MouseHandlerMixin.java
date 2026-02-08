@@ -13,7 +13,7 @@ import top.ribs.scguns.Config;
 import top.ribs.scguns.client.handler.AimingHandler;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 /**
  * Author: MrCrayfish

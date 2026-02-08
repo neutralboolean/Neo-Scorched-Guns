@@ -24,8 +24,7 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.tuple.Pair;
-import top.ribs.scguns.ScorchedGuns;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.annotation.Ignored;
 import top.ribs.scguns.annotation.Optional;
 import top.ribs.scguns.client.ClientHandler;
@@ -37,9 +36,10 @@ import top.ribs.scguns.debug.client.screen.widget.DebugButton;
 import top.ribs.scguns.debug.client.screen.widget.DebugSlider;
 import top.ribs.scguns.debug.client.screen.widget.DebugToggle;
 import top.ribs.scguns.init.ModEnchantments;
-import top.ribs.scguns.item.*;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.AmmoBoxItem;
 import top.ribs.scguns.item.attachment.IAttachment;
-import top.ribs.scguns.item.attachment.impl.Scope;
+import top.ribs.scguns.item.attachment.impl.*;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.util.GunJsonUtil;
 import top.ribs.scguns.util.SuperBuilder;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -789,7 +789,7 @@ public class Gun implements INBTSerializable<CompoundTag>, IEditorMenu {
     public static class Reloads implements INBTSerializable<CompoundTag> {
         @Optional
         @Ignored
-        private ResourceLocation reloadItem = new ResourceLocation(Reference.MOD_ID, "scrap");
+        private ResourceLocation reloadItem = new ResourceLocation(NeoScorchedGunsMain.MODID, "scrap");
         private int maxAmmo = 30;
         @Ignored
         private ReloadType reloadType = ReloadType.MANUAL;
@@ -967,7 +967,7 @@ public class Gun implements INBTSerializable<CompoundTag>, IEditorMenu {
         private boolean visible;
         private float damage;
         @Optional
-        private ResourceLocation advantage = new ResourceLocation(Reference.MOD_ID, "none");
+        private ResourceLocation advantage = new ResourceLocation(NeoScorchedGunsMain.MODID, "none");
         private float size;
         private double speed;
         private int life;
@@ -2425,7 +2425,7 @@ public class Gun implements INBTSerializable<CompoundTag>, IEditorMenu {
                 ItemStack scopeStack = ItemStack.of(attachment.getCompound("Scope"));
                 Scope scope = null;
                 if (scopeStack.getItem() instanceof ScopeItem scopeItem) {
-                    if (ScorchedGuns.isDebugging()) {
+                    if (NeoScorchedGunsMain.isDebugging()) {
                         return Debug.getScope(scopeItem);
                     }
                     scope = scopeItem.getProperties();

@@ -13,17 +13,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.*;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.init.ModParticleTypes;
 
 import java.util.List;
 import java.util.Optional;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
 public class RangeFinderItem extends Item {
     public RangeFinderItem(Properties properties) {
         super(properties);
@@ -38,14 +36,14 @@ public class RangeFinderItem extends Item {
         return InteractionResultHolder.success(itemstack);
     }
 
-    @Mod.EventBusSubscriber(modid = "scguns", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
     public static class ClientEventHandler {
         private static int tickCounter = 0;
         private static final int TICK_DELAY = 2;
         private static final double OFFSET = 0.1;
         private static final int MAX_RANGE = 200;
 
-        @SubscribeEvent
+//        @SubscribeEvent
         public static void onClientTick(TickEvent.ClientTickEvent event) {
             LocalPlayer player = Minecraft.getInstance().player;
             if (player != null) {

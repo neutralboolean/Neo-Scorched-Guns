@@ -10,13 +10,13 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.commons.lang3.tuple.Pair;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.ClientHandler;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.debug.client.screen.widget.DebugButton;
 import top.ribs.scguns.debug.client.screen.widget.DebugToggle;
-import top.ribs.scguns.item.GunItem;
-import top.ribs.scguns.item.ScopeItem;
+import top.ribs.scguns.item.gun.GunItem;
+import top.ribs.scguns.item.attachment.impl.ScopeItem;
 import top.ribs.scguns.item.attachment.impl.Scope;
 
 import java.util.HashMap;
@@ -28,7 +28,7 @@ import java.util.function.Supplier;
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class Debug
 {
     private static final Map<Item, Gun> GUNS = new HashMap<>();

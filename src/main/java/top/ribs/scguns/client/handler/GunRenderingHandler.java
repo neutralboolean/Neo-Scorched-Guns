@@ -40,9 +40,8 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import org.joml.Matrix4f;
-import org.joml.Vector4f;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.GunModel;
 import top.ribs.scguns.client.GunRenderType;
 import top.ribs.scguns.client.render.gun.IOverrideModel;
@@ -56,8 +55,8 @@ import top.ribs.scguns.common.properties.SightAnimation;
 import top.ribs.scguns.event.GunFireEvent;
 import top.ribs.scguns.init.ModItems;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GrenadeItem;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.throwable.GrenadeItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.animated.AnimatedDualWieldGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.item.attachment.IAttachment;
@@ -962,7 +961,7 @@ public class GunRenderingHandler {
 
         float randomValue = entityIdToRandomValue.getOrDefault(entity.getId(), 0f);
 
-        ResourceLocation flashTexture = new ResourceLocation(Reference.MOD_ID, "textures/effect/" + flash.getTextureLocation() + ".png");
+        ResourceLocation flashTexture = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/effect/" + flash.getTextureLocation() + ".png");
         boolean mirror = this.entityShotCount.getOrDefault(entity.getId(), 0) % 2 == 1 && flash.hasAlternateMuzzleFlash();
         this.drawMuzzleFlash(weapon, modifiedGun, randomValue, mirror, poseStack, buffer, partialTicks, flashTexture, entity);
 

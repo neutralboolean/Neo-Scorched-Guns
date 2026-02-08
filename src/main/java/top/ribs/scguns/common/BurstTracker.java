@@ -8,9 +8,9 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.util.GunCompositeStatHelper;
 
 import java.util.Map;
@@ -20,7 +20,7 @@ import java.util.WeakHashMap;
  * Author: MrCrayfish
  */
 @SuppressWarnings("unused")
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class BurstTracker
 {
     private static final Map<Player, BurstTracker> BURST_TRACKER_MAP = new WeakHashMap<>();

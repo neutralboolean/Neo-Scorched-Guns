@@ -13,19 +13,18 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.screen.LightningBatteryRecipe;
 import top.ribs.scguns.init.ModBlocks;
 
 import java.util.ArrayList;
 import java.util.List; // Ensure this import is present
-import java.util.Collections;
 import java.awt.*;
 import java.util.Optional;
 
 public class LightningBatteryCategory implements IRecipeCategory<LightningBatteryRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(Reference.MOD_ID, "lightning_battery");
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/lightning_battery_gui.png");
+    public static final ResourceLocation UID = new ResourceLocation(NeoScorchedGunsMain.MODID, "lightning_battery");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/lightning_battery_gui.png");
     public static final RecipeType<LightningBatteryRecipe> LIGHTNING_BATTERY_TYPE = new RecipeType<>(UID, LightningBatteryRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;

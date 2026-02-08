@@ -6,7 +6,6 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Container;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -20,14 +19,14 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animation.AnimationController;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.attributes.SCAttributes;
 import top.ribs.scguns.client.handler.ReloadHandler;
 import top.ribs.scguns.common.exosuit.ExoSuitAmmoHelper;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.AmmoBoxItem;
-import top.ribs.scguns.item.GunItem;
-import top.ribs.scguns.item.ammo_boxes.CreativeAmmoBoxItem;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.AmmoBoxItem;
+import top.ribs.scguns.item.gun.GunItem;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.CreativeAmmoBoxItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageGunSound;
@@ -48,7 +47,7 @@ import static top.ribs.scguns.common.network.ServerPlayHandler.hasCreativeAmmoBo
  * Author: MrCrayfish
  */
 @SuppressWarnings("unused")
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ReloadTracker {
     private static final Map<Player, ReloadTracker> RELOAD_TRACKER_MAP = new WeakHashMap<>();
 

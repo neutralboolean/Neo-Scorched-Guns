@@ -32,13 +32,11 @@ import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.init.ModDamageTypes;
 import top.ribs.scguns.init.ModEnchantments;
 import top.ribs.scguns.init.ModParticleTypes;
-import top.ribs.scguns.interfaces.IDamageable;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageBlood;
 import top.ribs.scguns.network.message.S2CMessageProjectileHitBlock;
 import top.ribs.scguns.network.message.S2CMessageProjectileHitEntity;
-import top.ribs.scguns.util.GunEnchantmentHelper;
 
 import java.util.Arrays;
 import java.util.List;

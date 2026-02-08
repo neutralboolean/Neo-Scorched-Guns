@@ -9,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 import top.ribs.scguns.world.CogChambers;
 
 public class ModStructures {
-    public static final DeferredRegister<StructureType<?>> REGISTRY;
+    public static final DeferredRegister<StructureType<?>> STRUCTURES;
     public static final RegistryObject<StructureType<CogChambers>> CHAMBER;
 
     private static <T extends Structure> StructureType<T> stuff(Codec<T> codec) {
@@ -17,7 +17,7 @@ public class ModStructures {
     }
 
     static {
-        REGISTRY = DeferredRegister.create(Registries.STRUCTURE_TYPE, "scguns");
-        CHAMBER = REGISTRY.register("cogchambers", () -> stuff(CogChambers.CODEC));
+        STRUCTURES = DeferredRegister.create(Registries.STRUCTURE_TYPE, "scguns");
+        CHAMBER = STRUCTURES.register("cogchambers", () -> stuff(CogChambers.CODEC));
     }
 }

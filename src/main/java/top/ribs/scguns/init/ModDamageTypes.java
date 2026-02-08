@@ -11,7 +11,7 @@ import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.projectile.ProjectileEntity;
 import top.ribs.scguns.util.GunModifierHelper;
 import javax.annotation.Nullable;
@@ -21,8 +21,8 @@ import java.util.concurrent.ThreadLocalRandom;
 // Fixed death messages by MikhailTapio!
 public class ModDamageTypes
 {
-    public static final ResourceKey<DamageType> BULLET = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Reference.MOD_ID, "bullet"));
-    public static final ResourceKey<DamageType> MELEE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(Reference.MOD_ID, "melee"));
+    public static final ResourceKey<DamageType> BULLET = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(NeoScorchedGunsMain.MODID, "bullet"));
+    public static final ResourceKey<DamageType> MELEE = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(NeoScorchedGunsMain.MODID, "melee"));
 
     /**
      * Based on code in Botania by Vazkii

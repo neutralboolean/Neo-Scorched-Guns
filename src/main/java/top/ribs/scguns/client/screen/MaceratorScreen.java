@@ -1,20 +1,17 @@
 package top.ribs.scguns.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import top.ribs.scguns.Reference;
-
-import java.awt.*;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 public class MaceratorScreen extends AbstractContainerScreen<MaceratorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Reference.MOD_ID, "textures/gui/macerator_gui.png");
+            new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/macerator_gui.png");
 
     public MaceratorScreen(MaceratorMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);

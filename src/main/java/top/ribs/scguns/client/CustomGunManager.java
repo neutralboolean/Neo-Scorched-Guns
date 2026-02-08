@@ -12,7 +12,7 @@ import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.commons.lang3.Validate;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.common.CustomGun;
 import top.ribs.scguns.common.CustomGunLoader;
 import top.ribs.scguns.init.ModItems;
@@ -24,7 +24,7 @@ import java.util.Optional;
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
 public class CustomGunManager
 {
     private static Map<ResourceLocation, CustomGun> customGunMap;

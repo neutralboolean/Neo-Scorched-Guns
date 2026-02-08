@@ -18,7 +18,7 @@ import top.ribs.scguns.common.ChargeHandler;
 import top.ribs.scguns.common.FireMode;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.SpreadTracker;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.util.GunCompositeStatHelper;
 
 //Thanks to Miga!

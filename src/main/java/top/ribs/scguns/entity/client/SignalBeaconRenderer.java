@@ -5,8 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.entity.monster.RedcoatEntity;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.SignalBeaconEntity;
 
 public class SignalBeaconRenderer extends MobRenderer<SignalBeaconEntity, SignalBeaconModel<SignalBeaconEntity>> {
@@ -16,7 +15,7 @@ public class SignalBeaconRenderer extends MobRenderer<SignalBeaconEntity, Signal
 
     @Override
     public ResourceLocation getTextureLocation(SignalBeaconEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/signal_beacon.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/signal_beacon.png");
     }
 
     @Override

@@ -1,33 +1,33 @@
 package top.ribs.scguns.init;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.Reference;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.screen.*;
 
-import java.sql.Ref;
-
-
+@EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
-            DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, Reference.MOD_ID);
+            DeferredRegister.create(BuiltInRegistries.RECIPE_SERIALIZER, NeoScorchedGunsMain.MODID);
 
-    public static final RegistryObject<RecipeSerializer<MechanicalPressRecipe>> MECHANICAL_PRESS_SERIALIZER =
+    public static final DeferredHolder<RecipeSerializer<?>, MechanicalPressRecipe.Serializer> MECHANICAL_PRESS_SERIALIZER =
             SERIALIZERS.register("mechanical_pressing", () -> MechanicalPressRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<PoweredMechanicalPressRecipe>> POWERED_MECHANICAL_PRESS_SERIALIZER =
+    public static final DeferredHolder<RecipeSerializer<?>, PoweredMechanicalPressRecipe.Serializer> POWERED_MECHANICAL_PRESS_SERIALIZER =
             SERIALIZERS.register("powered_mechanical_pressing", () -> PoweredMechanicalPressRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<MaceratorRecipe>> MACERATOR_SERIALIZER =
+    public static final DeferredHolder<RecipeSerializer<?>, MaceratorRecipe.Serializer> MACERATOR_SERIALIZER =
             SERIALIZERS.register("macerating", () -> MaceratorRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<PoweredMaceratorRecipe>> POWERED_MACERATOR_SERIALIZER =
+    public static final DeferredHolder<RecipeSerializer<?>, PoweredMaceratorRecipe.Serializer> POWERED_MACERATOR_SERIALIZER =
             SERIALIZERS.register("powered_macerating", () -> PoweredMaceratorRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<GunBenchRecipe>> GUN_BENCH_SERIALIZER =
+    public static final DeferredHolder<RecipeSerializer<?>, GunBenchRecipe.Serializer> GUN_BENCH_SERIALIZER =
             SERIALIZERS.register("gun_bench", () -> GunBenchRecipe.Serializer.INSTANCE);
 
-    public static final RegistryObject<RecipeSerializer<LightningBatteryRecipe>> LIGHTNING_BATTERY_SERIALIZER =
+    public static final DeferredHolder<RecipeSerializer<?>, LightningBatteryRecipe.Serializer> LIGHTNING_BATTERY_SERIALIZER =
             SERIALIZERS.register("lightning_battery", () -> LightningBatteryRecipe.Serializer.INSTANCE);
+
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

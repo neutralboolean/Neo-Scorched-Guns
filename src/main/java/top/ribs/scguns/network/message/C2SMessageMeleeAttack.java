@@ -17,7 +17,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 import net.minecraft.world.item.ItemStack;
 
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 
 public class C2SMessageMeleeAttack extends PlayMessage<C2SMessageMeleeAttack> {

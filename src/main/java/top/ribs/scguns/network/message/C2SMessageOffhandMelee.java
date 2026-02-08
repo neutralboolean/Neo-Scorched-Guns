@@ -10,8 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import top.ribs.scguns.common.GripType;
 import top.ribs.scguns.common.Gun;
-import top.ribs.scguns.item.BayonetItem;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.attachment.impl.BayonetItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 public class C2SMessageOffhandMelee extends PlayMessage<C2SMessageOffhandMelee> {
     private int targetId;

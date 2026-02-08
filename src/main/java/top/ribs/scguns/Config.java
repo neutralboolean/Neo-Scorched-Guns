@@ -1,9 +1,10 @@
 package top.ribs.scguns;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.loading.FMLPaths;
+
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
 import top.ribs.scguns.client.SwayType;
 import top.ribs.scguns.client.render.crosshair.DotRenderMode;
@@ -28,10 +29,10 @@ public class Config
         public final Particle particle;
         public final Controls controls;
         public final Experimental experimental;
-        public final ForgeConfigSpec.BooleanValue hideConfigButton;
-        public final ForgeConfigSpec.EnumValue<ButtonAlignment> buttonAlignment;
+        public final ModConfigSpec.BooleanValue hideConfigButton;
+        public final ModConfigSpec.EnumValue<ButtonAlignment> buttonAlignment;
 
-        public Client(ForgeConfigSpec.Builder builder)
+        public Client(ModConfigSpec.Builder builder)
         {
             builder.push("client");
             {
@@ -52,13 +53,13 @@ public class Config
      */
     public static class Sounds
     {
-        public final ForgeConfigSpec.BooleanValue playSoundWhenHeadshot;
-        public final ForgeConfigSpec.ConfigValue<String> headshotSound;
-        public final ForgeConfigSpec.BooleanValue playSoundWhenCritical;
-        public final ForgeConfigSpec.ConfigValue<String> criticalSound;
-        public final ForgeConfigSpec.DoubleValue impactSoundDistance;
+        public final ModConfigSpec.BooleanValue playSoundWhenHeadshot;
+        public final ModConfigSpec.ConfigValue<String> headshotSound;
+        public final ModConfigSpec.BooleanValue playSoundWhenCritical;
+        public final ModConfigSpec.ConfigValue<String> criticalSound;
+        public final ModConfigSpec.DoubleValue impactSoundDistance;
 
-        public Sounds(ForgeConfigSpec.Builder builder)
+        public Sounds(ModConfigSpec.Builder builder)
         {
             builder.comment("Control sounds triggered by guns").push("sounds");
             {
@@ -77,34 +78,34 @@ public class Config
      */
     public static class Display
     {
-        public final ForgeConfigSpec.BooleanValue oldAnimations;
-        public final ForgeConfigSpec.ConfigValue<String> crosshair;
-        public final ForgeConfigSpec.BooleanValue displayGunInfo;
-        public final ForgeConfigSpec.BooleanValue immersiveGunInfo;
-        public final ForgeConfigSpec.BooleanValue cinematicGunEffects;
-        public final ForgeConfigSpec.BooleanValue cooldownIndicator;
-        public final ForgeConfigSpec.BooleanValue weaponSway;
-        public final ForgeConfigSpec.DoubleValue swaySensitivity;
-        public final ForgeConfigSpec.EnumValue<SwayType> swayType;
-        public final ForgeConfigSpec.BooleanValue cameraRollEffect;
-        public final ForgeConfigSpec.DoubleValue cameraRollAngle;
-        public final ForgeConfigSpec.BooleanValue restrictCameraRollToWeapons;
-        public final ForgeConfigSpec.BooleanValue sprintAnimation;
-        public final ForgeConfigSpec.DoubleValue bobbingIntensity;
-        public final ForgeConfigSpec.BooleanValue fireLights;
-        public final ForgeConfigSpec.BooleanValue puritySeals;
-        public final ForgeConfigSpec.DoubleValue dynamicCrosshairBaseSpread;
-        public final ForgeConfigSpec.DoubleValue dynamicCrosshairSpreadMultiplier;
-        public final ForgeConfigSpec.DoubleValue dynamicCrosshairReactivity;
-        public final ForgeConfigSpec.EnumValue<DotRenderMode> dynamicCrosshairDotMode;
-        public final ForgeConfigSpec.BooleanValue onlyRenderDotWhileAiming;
-        public final ForgeConfigSpec.DoubleValue dynamicCrosshairDotThreshold;
-        public final ForgeConfigSpec.DoubleValue dynamicCrosshairMaxScale;
-        public final ForgeConfigSpec.BooleanValue renderArms;
+        public final ModConfigSpec.BooleanValue oldAnimations;
+        public final ModConfigSpec.ConfigValue<String> crosshair;
+        public final ModConfigSpec.BooleanValue displayGunInfo;
+        public final ModConfigSpec.BooleanValue immersiveGunInfo;
+        public final ModConfigSpec.BooleanValue cinematicGunEffects;
+        public final ModConfigSpec.BooleanValue cooldownIndicator;
+        public final ModConfigSpec.BooleanValue weaponSway;
+        public final ModConfigSpec.DoubleValue swaySensitivity;
+        public final ModConfigSpec.EnumValue<SwayType> swayType;
+        public final ModConfigSpec.BooleanValue cameraRollEffect;
+        public final ModConfigSpec.DoubleValue cameraRollAngle;
+        public final ModConfigSpec.BooleanValue restrictCameraRollToWeapons;
+        public final ModConfigSpec.BooleanValue sprintAnimation;
+        public final ModConfigSpec.DoubleValue bobbingIntensity;
+        public final ModConfigSpec.BooleanValue fireLights;
+        public final ModConfigSpec.BooleanValue puritySeals;
+        public final ModConfigSpec.DoubleValue dynamicCrosshairBaseSpread;
+        public final ModConfigSpec.DoubleValue dynamicCrosshairSpreadMultiplier;
+        public final ModConfigSpec.DoubleValue dynamicCrosshairReactivity;
+        public final ModConfigSpec.EnumValue<DotRenderMode> dynamicCrosshairDotMode;
+        public final ModConfigSpec.BooleanValue onlyRenderDotWhileAiming;
+        public final ModConfigSpec.DoubleValue dynamicCrosshairDotThreshold;
+        public final ModConfigSpec.DoubleValue dynamicCrosshairMaxScale;
+        public final ModConfigSpec.BooleanValue renderArms;
 
 
 
-        public Display(ForgeConfigSpec.Builder builder)
+        public Display(ModConfigSpec.Builder builder)
         {
             builder.comment("Configuration for display related options").push("display");
             {
@@ -144,15 +145,15 @@ public class Config
      */
     public static class Particle
     {
-        public final ForgeConfigSpec.IntValue bulletHoleLifeMin;
-        public final ForgeConfigSpec.IntValue bulletHoleLifeMax;
-        public final ForgeConfigSpec.DoubleValue bulletHoleFadeThreshold;
-        public final ForgeConfigSpec.BooleanValue enableBlood;
-        public final ForgeConfigSpec.DoubleValue impactParticleDistance;
-        public final ForgeConfigSpec.BooleanValue enableWaterImpactParticles;
-        public final ForgeConfigSpec.BooleanValue enableLavaImpactParticles;
+        public final ModConfigSpec.IntValue bulletHoleLifeMin;
+        public final ModConfigSpec.IntValue bulletHoleLifeMax;
+        public final ModConfigSpec.DoubleValue bulletHoleFadeThreshold;
+        public final ModConfigSpec.BooleanValue enableBlood;
+        public final ModConfigSpec.DoubleValue impactParticleDistance;
+        public final ModConfigSpec.BooleanValue enableWaterImpactParticles;
+        public final ModConfigSpec.BooleanValue enableLavaImpactParticles;
 
-        public Particle(ForgeConfigSpec.Builder builder)
+        public Particle(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to particles").push("particle");
             {
@@ -170,10 +171,10 @@ public class Config
 
     public static class Controls
     {
-        public final ForgeConfigSpec.DoubleValue aimDownSightSensitivity;
-        public final ForgeConfigSpec.BooleanValue flipControls;
+        public final ModConfigSpec.DoubleValue aimDownSightSensitivity;
+        public final ModConfigSpec.BooleanValue flipControls;
 
-        public Controls(ForgeConfigSpec.Builder builder)
+        public Controls(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to controls").push("controls");
             {
@@ -186,7 +187,7 @@ public class Config
 
     public static class Experimental
     {
-        public Experimental(ForgeConfigSpec.Builder builder)
+        public Experimental(ModConfigSpec.Builder builder)
         {
             builder.comment("Experimental options").push("experimental");
             {
@@ -211,7 +212,7 @@ public class Config
         public final Turret turret;
 
 
-        public Common(ForgeConfigSpec.Builder builder)
+        public Common(ModConfigSpec.Builder builder)
         {
             builder.push("common");
             {
@@ -236,29 +237,29 @@ public class Config
     public static class Gameplay
     {
         public final Griefing griefing;
-        public final ForgeConfigSpec.BooleanValue enableFirePlacement;
-        public final ForgeConfigSpec.BooleanValue enableGunDamage;
-        public final ForgeConfigSpec.BooleanValue enableAttachmentDamage;
-        public  final ForgeConfigSpec.BooleanValue spawnCasings;
-        public final ForgeConfigSpec.DoubleValue growBoundingBoxAmount;
-        public final ForgeConfigSpec.BooleanValue enableHeadShots;
-        public final ForgeConfigSpec.DoubleValue headShotDamageMultiplier;
-        public final ForgeConfigSpec.DoubleValue criticalDamageMultiplier;
-        public final ForgeConfigSpec.BooleanValue ignoreLeaves;
-        public final ForgeConfigSpec.BooleanValue enableKnockback;
-        public final ForgeConfigSpec.DoubleValue knockbackStrength;
-        public final ForgeConfigSpec.BooleanValue improvedHitboxes;
-        public final ForgeConfigSpec.DoubleValue enemyBulletDamage;
-        public final ForgeConfigSpec.DoubleValue ammoBoxCapacityMultiplier;
-        public final ForgeConfigSpec.IntValue energyProductionRate;
-        public final ForgeConfigSpec.BooleanValue drawAnimation;
-        public final ForgeConfigSpec.BooleanValue forceEnergyGuns;
-        public final ForgeConfigSpec.BooleanValue toggleADS;
-        public final ForgeConfigSpec.DoubleValue globalDamageMultiplier;
-        public final ForgeConfigSpec.BooleanValue disableVillagerSpawning;
-        public final ForgeConfigSpec.DoubleValue dissidentSpawnChance;
-        public final ForgeConfigSpec.BooleanValue enableAutoReload;
-        public Gameplay(ForgeConfigSpec.Builder builder)
+        public final ModConfigSpec.BooleanValue enableFirePlacement;
+        public final ModConfigSpec.BooleanValue enableGunDamage;
+        public final ModConfigSpec.BooleanValue enableAttachmentDamage;
+        public  final ModConfigSpec.BooleanValue spawnCasings;
+        public final ModConfigSpec.DoubleValue growBoundingBoxAmount;
+        public final ModConfigSpec.BooleanValue enableHeadShots;
+        public final ModConfigSpec.DoubleValue headShotDamageMultiplier;
+        public final ModConfigSpec.DoubleValue criticalDamageMultiplier;
+        public final ModConfigSpec.BooleanValue ignoreLeaves;
+        public final ModConfigSpec.BooleanValue enableKnockback;
+        public final ModConfigSpec.DoubleValue knockbackStrength;
+        public final ModConfigSpec.BooleanValue improvedHitboxes;
+        public final ModConfigSpec.DoubleValue enemyBulletDamage;
+        public final ModConfigSpec.DoubleValue ammoBoxCapacityMultiplier;
+        public final ModConfigSpec.IntValue energyProductionRate;
+        public final ModConfigSpec.BooleanValue drawAnimation;
+        public final ModConfigSpec.BooleanValue forceEnergyGuns;
+        public final ModConfigSpec.BooleanValue toggleADS;
+        public final ModConfigSpec.DoubleValue globalDamageMultiplier;
+        public final ModConfigSpec.BooleanValue disableVillagerSpawning;
+        public final ModConfigSpec.DoubleValue dissidentSpawnChance;
+        public final ModConfigSpec.BooleanValue enableAutoReload;
+        public Gameplay(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to gameplay").push("gameplay");
             {
@@ -310,15 +311,15 @@ public class Config
      */
     public static class Griefing
     {
-        public final ForgeConfigSpec.BooleanValue enableBlockRemovalOnExplosions;
-        public final ForgeConfigSpec.BooleanValue enableGlassBreaking;
-        public final ForgeConfigSpec.BooleanValue fragileBlockDrops;
-        public final ForgeConfigSpec.DoubleValue fragileBaseBreakChance;
-        public final ForgeConfigSpec.BooleanValue setFireToBlocks;
-        public final ForgeConfigSpec.BooleanValue enableBlockBreaking;
-        public final ForgeConfigSpec.BooleanValue enableBeamMining;
+        public final ModConfigSpec.BooleanValue enableBlockRemovalOnExplosions;
+        public final ModConfigSpec.BooleanValue enableGlassBreaking;
+        public final ModConfigSpec.BooleanValue fragileBlockDrops;
+        public final ModConfigSpec.DoubleValue fragileBaseBreakChance;
+        public final ModConfigSpec.BooleanValue setFireToBlocks;
+        public final ModConfigSpec.BooleanValue enableBlockBreaking;
+        public final ModConfigSpec.BooleanValue enableBeamMining;
 
-        public Griefing(ForgeConfigSpec.Builder builder)
+        public Griefing(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties related to gun griefing").push("griefing");
             {
@@ -339,9 +340,9 @@ public class Config
      */
     public static class Network
     {
-        public final ForgeConfigSpec.DoubleValue projectileTrackingRange;
+        public final ModConfigSpec.DoubleValue projectileTrackingRange;
 
-        public Network(ForgeConfigSpec.Builder builder)
+        public Network(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to network").push("network");
             {
@@ -355,14 +356,14 @@ public class Config
      * Mob aggression related config options
      */
     public static class AggroMobs {
-        public final ForgeConfigSpec.BooleanValue enabled;
-        public final ForgeConfigSpec.DoubleValue unsilencedRange;
-        public final ForgeConfigSpec.DoubleValue aggroChance;
-        public final ForgeConfigSpec.DoubleValue chainAggroChance;
-        public final ForgeConfigSpec.DoubleValue chainAggroRadius;
-        public final ForgeConfigSpec.ConfigValue<List<? extends String>> exemptEntities;
+        public final ModConfigSpec.BooleanValue enabled;
+        public final ModConfigSpec.DoubleValue unsilencedRange;
+        public final ModConfigSpec.DoubleValue aggroChance;
+        public final ModConfigSpec.DoubleValue chainAggroChance;
+        public final ModConfigSpec.DoubleValue chainAggroRadius;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> exemptEntities;
 
-        public AggroMobs(ForgeConfigSpec.Builder builder) {
+        public AggroMobs(ModConfigSpec.Builder builder) {
             builder.comment("Properties relating to mob aggression from gunfire").push("aggro_mobs");
             {
                 this.enabled = builder.comment("If true, hostile mobs may become aggressive when guns are fired nearby.").define("enabled", true);
@@ -376,12 +377,12 @@ public class Config
         }
     }
     public static class FleeingMobs {
-        public final ForgeConfigSpec.BooleanValue enabled;
-        public final ForgeConfigSpec.DoubleValue silencedRange;
-        public final ForgeConfigSpec.DoubleValue unsilencedRange;
-        public final ForgeConfigSpec.ConfigValue<List<? extends String>> fleeingEntities;
+        public final ModConfigSpec.BooleanValue enabled;
+        public final ModConfigSpec.DoubleValue silencedRange;
+        public final ModConfigSpec.DoubleValue unsilencedRange;
+        public final ModConfigSpec.ConfigValue<List<? extends String>> fleeingEntities;
 
-        public FleeingMobs(ForgeConfigSpec.Builder builder) {
+        public FleeingMobs(ModConfigSpec.Builder builder) {
             builder.comment("Properties relating to mob fleeing").push("fleeing_mobs");
             {
                 this.enabled = builder.comment("If true, nearby mobs will flee from the firing of guns.").define("enabled", true);
@@ -398,9 +399,9 @@ public class Config
      */
     public static class Rockets
     {
-        public final ForgeConfigSpec.DoubleValue explosionRadius;
+        public final ModConfigSpec.DoubleValue explosionRadius;
 
-        public Rockets(ForgeConfigSpec.Builder builder)
+        public Rockets(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to rockets").push("rockets");
             {
@@ -415,9 +416,9 @@ public class Config
      */
     public static class Grenades
     {
-        public final ForgeConfigSpec.DoubleValue explosionRadius;
+        public final ModConfigSpec.DoubleValue explosionRadius;
 
-        public Grenades(ForgeConfigSpec.Builder builder)
+        public Grenades(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to grenades").push("grenades");
             {
@@ -431,7 +432,7 @@ public class Config
      */
     public static class Gunsmith
     {
-        public Gunsmith(ForgeConfigSpec.Builder builder) {
+        public Gunsmith(ModConfigSpec.Builder builder) {
             builder.comment("Properties relating to gunsmith").push("gunsmith");
             {
 
@@ -441,12 +442,12 @@ public class Config
     }
     public static class Turret
     {
-        public final Map<TurretProjectileEntity.BulletType, ForgeConfigSpec.DoubleValue> bulletDamage;
-        public final ForgeConfigSpec.BooleanValue enableDamageScaling;
-        public final ForgeConfigSpec.DoubleValue damageScalingRate;
-        public final ForgeConfigSpec.DoubleValue maxScaledDamage;
+        public final Map<TurretProjectileEntity.BulletType, ModConfigSpec.DoubleValue> bulletDamage;
+        public final ModConfigSpec.BooleanValue enableDamageScaling;
+        public final ModConfigSpec.DoubleValue damageScalingRate;
+        public final ModConfigSpec.DoubleValue maxScaledDamage;
 
-        public Turret(ForgeConfigSpec.Builder builder)
+        public Turret(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to turrets").push("turret");
             {
@@ -493,7 +494,7 @@ public class Config
         public final Blind blind;
         public final Deafen deafen;
 
-        public StunGrenades(ForgeConfigSpec.Builder builder)
+        public StunGrenades(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to stun grenades").push("stun_grenades");
             {
@@ -510,9 +511,9 @@ public class Config
     public static class Blind
     {
         public final EffectCriteria criteria;
-        public final ForgeConfigSpec.BooleanValue blindMobs;
+        public final ModConfigSpec.BooleanValue blindMobs;
 
-        public Blind(ForgeConfigSpec.Builder builder)
+        public Blind(ModConfigSpec.Builder builder)
         {
             builder.comment("Blinding properties of stun grenades").push("blind");
             {
@@ -529,9 +530,9 @@ public class Config
     public static class Deafen
     {
         public final EffectCriteria criteria;
-        public final ForgeConfigSpec.BooleanValue panicMobs;
+        public final ModConfigSpec.BooleanValue panicMobs;
 
-        public Deafen(ForgeConfigSpec.Builder builder)
+        public Deafen(ModConfigSpec.Builder builder)
         {
             builder.comment("Deafening properties of stun grenades").push("deafen");
             {
@@ -547,14 +548,14 @@ public class Config
      */
     public static class EffectCriteria
     {
-        public final ForgeConfigSpec.DoubleValue radius;
-        public final ForgeConfigSpec.IntValue durationMax;
-        public final ForgeConfigSpec.IntValue durationMin;
-        public final ForgeConfigSpec.DoubleValue angleEffect;
-        public final ForgeConfigSpec.DoubleValue angleAttenuationMax;
-        public final ForgeConfigSpec.BooleanValue raytraceOpaqueBlocks;
+        public final ModConfigSpec.DoubleValue radius;
+        public final ModConfigSpec.IntValue durationMax;
+        public final ModConfigSpec.IntValue durationMin;
+        public final ModConfigSpec.DoubleValue angleEffect;
+        public final ModConfigSpec.DoubleValue angleAttenuationMax;
+        public final ModConfigSpec.BooleanValue raytraceOpaqueBlocks;
 
-        public EffectCriteria(ForgeConfigSpec.Builder builder, double radius, int durationMax, int durationMin, double angleEffect, double angleAttenuationMax, boolean raytraceOpaqueBlocks)
+        public EffectCriteria(ModConfigSpec.Builder builder, double radius, int durationMax, int durationMin, double angleEffect, double angleAttenuationMax, boolean raytraceOpaqueBlocks)
         {
             builder.push("effect_criteria");
             {
@@ -574,10 +575,10 @@ public class Config
      */
     public static class ProjectileSpread
     {
-        public final ForgeConfigSpec.IntValue spreadThreshold;
-        public final ForgeConfigSpec.IntValue maxCount;
+        public final ModConfigSpec.IntValue spreadThreshold;
+        public final ModConfigSpec.IntValue maxCount;
 
-        public ProjectileSpread(ForgeConfigSpec.Builder builder)
+        public ProjectileSpread(ModConfigSpec.Builder builder)
         {
             builder.comment("Properties relating to projectile spread").push("projectile_spread");
             {
@@ -588,14 +589,14 @@ public class Config
         }
     }
     public static class GunScalingConfig {
-        private static final ForgeConfigSpec SPEC;
-        public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+        private static final ModConfigSpec SPEC;
+        public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
         private static final GunScalingConfig INSTANCE = new GunScalingConfig();
 
-        private static final ForgeConfigSpec.BooleanValue enableScalingDamage;
-        private static final ForgeConfigSpec.DoubleValue damageIncreaseRate;
-        private static final ForgeConfigSpec.DoubleValue baseDamage;
-        private static final ForgeConfigSpec.DoubleValue maxDamage;
+        private static final ModConfigSpec.BooleanValue enableScalingDamage;
+        private static final ModConfigSpec.DoubleValue damageIncreaseRate;
+        private static final ModConfigSpec.DoubleValue baseDamage;
+        private static final ModConfigSpec.DoubleValue maxDamage;
 
         static {
             BUILDER.push("Scaling Damage");
@@ -666,7 +667,8 @@ public class Config
                 // Do nothing
             }
 
-            ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, SPEC, "gun_scaling/main.toml");
+            ModLoadingContext.get()
+                    .getActiveContainer().registerConfig(ModConfig.Type.COMMON, SPEC, "gun_scaling/main.toml");
         }
 
         public static GunScalingConfig getInstance() {
@@ -683,18 +685,18 @@ public class Config
      */
     public static class Server
     {
-        public final ForgeConfigSpec.IntValue alphaOverlay;
-        public final ForgeConfigSpec.IntValue alphaFadeThreshold;
-        public final ForgeConfigSpec.DoubleValue soundPercentage;
-        public final ForgeConfigSpec.IntValue soundFadeThreshold;
-        public final ForgeConfigSpec.DoubleValue ringVolume;
-        public final ForgeConfigSpec.DoubleValue gunShotMaxDistance;
-        public final ForgeConfigSpec.DoubleValue reloadMaxDistance;
-        public final ForgeConfigSpec.BooleanValue enableCameraRecoil;
-        public final ForgeConfigSpec.IntValue cooldownThreshold;
+        public final ModConfigSpec.IntValue alphaOverlay;
+        public final ModConfigSpec.IntValue alphaFadeThreshold;
+        public final ModConfigSpec.DoubleValue soundPercentage;
+        public final ModConfigSpec.IntValue soundFadeThreshold;
+        public final ModConfigSpec.DoubleValue ringVolume;
+        public final ModConfigSpec.DoubleValue gunShotMaxDistance;
+        public final ModConfigSpec.DoubleValue reloadMaxDistance;
+        public final ModConfigSpec.BooleanValue enableCameraRecoil;
+        public final ModConfigSpec.IntValue cooldownThreshold;
         public final Experimental experimental;
 
-        public Server(ForgeConfigSpec.Builder builder)
+        public Server(ModConfigSpec.Builder builder)
         {
             builder.push("server");
             {
@@ -725,9 +727,9 @@ public class Config
 
         public static class Experimental
         {
-            public final ForgeConfigSpec.BooleanValue forceDyeableAttachments;
+            public final ModConfigSpec.BooleanValue forceDyeableAttachments;
 
-            public Experimental(ForgeConfigSpec.Builder builder)
+            public Experimental(ModConfigSpec.Builder builder)
             {
                 builder.push("experimental");
                 this.forceDyeableAttachments = builder.comment("Forces all attachments to be dyeable regardless if they have an affect on the model. This is useful if your server uses custom models for attachments and the models have dyeable elements").define("forceDyeableAttachments", false);
@@ -736,26 +738,26 @@ public class Config
         }
     }
 
-    static final ForgeConfigSpec clientSpec;
+    static final ModConfigSpec clientSpec;
     public static final Config.Client CLIENT;
 
-    static final ForgeConfigSpec commonSpec;
+    static final ModConfigSpec commonSpec;
     public static final Config.Common COMMON;
 
-    static final ForgeConfigSpec serverSpec;
+    static final ModConfigSpec serverSpec;
     public static final Config.Server SERVER;
 
     static
     {
-        final Pair<Client, ForgeConfigSpec> clientSpecPair = new ForgeConfigSpec.Builder().configure(Config.Client::new);
+        final Pair<Client, ModConfigSpec> clientSpecPair = new ModConfigSpec.Builder().configure(Config.Client::new);
         clientSpec = clientSpecPair.getRight();
         CLIENT = clientSpecPair.getLeft();
 
-        final Pair<Common, ForgeConfigSpec> commonSpecPair = new ForgeConfigSpec.Builder().configure(Common::new);
+        final Pair<Common, ModConfigSpec> commonSpecPair = new ModConfigSpec.Builder().configure(Common::new);
         commonSpec = commonSpecPair.getRight();
         COMMON = commonSpecPair.getLeft();
 
-        final Pair<Server, ForgeConfigSpec> serverSpecPair = new ForgeConfigSpec.Builder().configure(Server::new);
+        final Pair<Server, ModConfigSpec> serverSpecPair = new ModConfigSpec.Builder().configure(Server::new);
         serverSpec = serverSpecPair.getRight();
         SERVER = serverSpecPair.getLeft();
     }

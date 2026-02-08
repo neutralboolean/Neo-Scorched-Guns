@@ -5,14 +5,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.NeoScorchedGunsMain;
+import top.ribs.scguns.item.gun.GunItem;
 
 import java.util.Map;
 import java.util.UUID;
 import java.util.WeakHashMap;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class ServerBurstTracker {
     private static final Map<UUID, BurstData> burstDataMap = new WeakHashMap<>();
 

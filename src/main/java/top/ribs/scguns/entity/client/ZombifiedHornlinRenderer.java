@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.ZombifiedHornlinEntity;
 
 public class ZombifiedHornlinRenderer extends MobRenderer<ZombifiedHornlinEntity, ZombifiedHornlinModel<ZombifiedHornlinEntity>> {
@@ -15,7 +15,7 @@ public class ZombifiedHornlinRenderer extends MobRenderer<ZombifiedHornlinEntity
 
     @Override
     public ResourceLocation getTextureLocation(ZombifiedHornlinEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/zombified_hornlin.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/zombified_hornlin.png");
     }
 
     @Override

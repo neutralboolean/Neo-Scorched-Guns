@@ -8,7 +8,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -34,15 +33,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import top.ribs.scguns.ScorchedGuns;
-import top.ribs.scguns.attributes.SCAttributes;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.config.CogMinionConfig;
 import top.ribs.scguns.entity.weapon.ScGunsWeapon;
 import top.ribs.scguns.init.ModEffects;
 import top.ribs.scguns.init.ModEntities;
 import top.ribs.scguns.init.ModTags;
 import top.ribs.scguns.interfaces.IEntityCanReload;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 import java.util.List;
 
@@ -179,7 +177,7 @@ public class CogMinionEntity extends Monster implements IEntityCanReload {
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
         super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
         RandomSource random = pLevel.getRandom();
-        CogMinionConfig config = ScorchedGuns.COG_MINION_CONFIG;
+        CogMinionConfig config = NeoScorchedGunsMain.COG_MINION_CONFIG;
 
         if (random.nextFloat() < config.getSpawnWithItemChance()) {
             CogMinionConfig.ItemSpawnData spawnData = selectItemBasedOnChance(config.getItems(), random);

@@ -20,7 +20,7 @@ import net.minecraftforge.client.event.RenderLevelStageEvent;
 import top.ribs.scguns.common.FireMode;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.init.ModParticleTypes;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 @OnlyIn(Dist.CLIENT)
 public class BeamHandler {

@@ -1,6 +1,6 @@
 package top.ribs.scguns.init;
 
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.effect.IncurableEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -14,10 +14,10 @@ import top.ribs.scguns.effect.SulfurPoisoningEffect;
  */
 public class    ModEffects
 {
-    public static final DeferredRegister<MobEffect> REGISTER = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Reference.MOD_ID);
+    public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, NeoScorchedGunsMain.MODID);
 
-    public static final RegistryObject<IncurableEffect> BLINDED = REGISTER.register("blinded", () -> new IncurableEffect(MobEffectCategory.HARMFUL, 0));
-    public static final RegistryObject<IncurableEffect> DEAFENED = REGISTER.register("deafened", () -> new IncurableEffect(MobEffectCategory.HARMFUL, 0));
-    public static final RegistryObject<SulfurPoisoningEffect> SULFUR_POISONING = REGISTER.register("sulfur_poisoning",
+    public static final RegistryObject<IncurableEffect> BLINDED = EFFECTS.register("blinded", () -> new IncurableEffect(MobEffectCategory.HARMFUL, 0));
+    public static final RegistryObject<IncurableEffect> DEAFENED = EFFECTS.register("deafened", () -> new IncurableEffect(MobEffectCategory.HARMFUL, 0));
+    public static final RegistryObject<SulfurPoisoningEffect> SULFUR_POISONING = EFFECTS.register("sulfur_poisoning",
             () -> new SulfurPoisoningEffect(MobEffectCategory.HARMFUL, 0xFFE135));
 }

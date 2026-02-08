@@ -16,7 +16,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.audio.StunRingingSound;
 import top.ribs.scguns.init.ModEffects;
 
@@ -162,7 +162,7 @@ public class SoundHandler
 
     private boolean isStunGrenade(ResourceLocation loc)
     {
-        return loc.toString().equals(Reference.MOD_ID + ":grenade_stun_explosion");
+        return loc.toString().equals(NeoScorchedGunsMain.MODID + ":grenade_stun_explosion");
     }
 
     private float getMutedVolume(float duration, float volumeBase)

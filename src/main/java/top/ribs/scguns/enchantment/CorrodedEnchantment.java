@@ -13,7 +13,7 @@ import net.minecraft.world.item.enchantment.EnchantmentCategory;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.init.ModEnchantments;
 import top.ribs.scguns.init.ModTags;
 
@@ -22,7 +22,7 @@ import java.util.Random;
 /**
  * Corroded Enchantment - Deals extra damage to bots and has a chance to poison non-bot enemies
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class CorrodedEnchantment extends Enchantment {
 
     private static final Random RANDOM = new Random();

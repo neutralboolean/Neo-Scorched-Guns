@@ -15,7 +15,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.commons.lang3.tuple.Pair;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.debug.IDebugWidget;
 import top.ribs.scguns.debug.IEditorMenu;
 import top.ribs.scguns.util.ScreenUtil;
@@ -29,7 +29,7 @@ import java.util.function.Supplier;
  */
 public class EditorScreen extends Screen
 {
-    private static final ResourceLocation WINDOW_TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/debug.png");
+    private static final ResourceLocation WINDOW_TEXTURE = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/debug.png");
     private static final int WIDTH = 150;
 
     private final Screen parent;

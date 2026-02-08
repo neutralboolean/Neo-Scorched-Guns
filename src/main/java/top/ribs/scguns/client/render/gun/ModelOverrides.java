@@ -1,7 +1,7 @@
 package top.ribs.scguns.client.render.gun;
 
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.NeoScorchedGunsMain;
+import top.ribs.scguns.item.gun.GunItem;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
 public class ModelOverrides
 {
     private static final Map<Item, IOverrideModel> MODEL_MAP = new HashMap<>();

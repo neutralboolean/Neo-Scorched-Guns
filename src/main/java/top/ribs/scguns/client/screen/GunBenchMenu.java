@@ -13,7 +13,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
-import top.ribs.scguns.item.BlueprintItem;
+import top.ribs.scguns.item.blueprint.BlueprintItem;
 
 import java.util.Optional;
 

@@ -8,9 +8,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkEvent;
 import top.ribs.scguns.client.handler.ClientMeleeAttackHandler;
-import top.ribs.scguns.item.GunItem;
-
-import java.util.function.Supplier;
+import top.ribs.scguns.item.gun.GunItem;
 
 public class S2CMessageMeleeAttack extends PlayMessage<S2CMessageMeleeAttack> {
     private ItemStack heldItem;

@@ -1,13 +1,10 @@
 package top.ribs.scguns.event;
 
-import net.minecraft.world.entity.MobCategory;
-import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.init.ModEntities;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class ModBiomeModification {
 
 }

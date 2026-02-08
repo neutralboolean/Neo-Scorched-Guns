@@ -1,6 +1,8 @@
 package top.ribs.scguns.item;
 
-public class UnderwaterGunItem extends GunItem{
+import top.ribs.scguns.item.gun.GunItem;
+
+public class UnderwaterGunItem extends GunItem {
     public UnderwaterGunItem(Properties properties) {
         super(properties);
     }

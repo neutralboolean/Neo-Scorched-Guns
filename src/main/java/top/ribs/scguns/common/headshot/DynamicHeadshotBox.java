@@ -8,8 +8,6 @@ import top.ribs.scguns.interfaces.IHeadshotBox;
 
 import javax.annotation.Nullable;
 
-import static top.ribs.scguns.ScorchedGuns.LOGGER;
-
 public class DynamicHeadshotBox<T extends LivingEntity> implements IHeadshotBox<T> {
     private static final double DEFAULT_HEAD_SCALE = 0.6;
     private static final double MIN_HEAD_SIZE = 6.0;

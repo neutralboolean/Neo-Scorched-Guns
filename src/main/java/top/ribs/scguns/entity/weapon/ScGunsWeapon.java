@@ -21,7 +21,7 @@ import top.ribs.scguns.init.ModEnchantments;
 import top.ribs.scguns.init.ModItems;
 import top.ribs.scguns.interfaces.IProjectileFactory;
 import top.ribs.scguns.interfaces.IWeapon;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageBulletTrail;
 import top.ribs.scguns.util.GunEnchantmentHelper;

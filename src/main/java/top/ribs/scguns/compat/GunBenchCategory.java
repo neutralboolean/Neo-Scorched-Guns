@@ -2,28 +2,23 @@ package top.ribs.scguns.compat;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
-import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.screen.GunBenchRecipe;
 import top.ribs.scguns.init.ModBlocks;
 
-import java.awt.*;
-
 public class GunBenchCategory implements IRecipeCategory<GunBenchRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(Reference.MOD_ID, "gun_bench");
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/gun_bench_gui.png");
+    public static final ResourceLocation UID = new ResourceLocation(NeoScorchedGunsMain.MODID, "gun_bench");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/gun_bench_gui.png");
     public static final RecipeType<GunBenchRecipe> GUN_BENCH_TYPE = new RecipeType<>(UID, GunBenchRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;

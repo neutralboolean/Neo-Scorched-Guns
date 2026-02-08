@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.SpecialModels;
 import top.ribs.scguns.client.render.gun.IOverrideModel;
 import top.ribs.scguns.client.util.RenderUtil;
@@ -142,7 +142,7 @@ public class CombatShotgunModel implements IOverrideModel {
         return 1 - Math.pow(1 - (2 * x), 4);
     }
 
-    @Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT)
     public static class GunFireEventCombatShotgunHandler {
         private static float pumpProgress = 0.0f;
 

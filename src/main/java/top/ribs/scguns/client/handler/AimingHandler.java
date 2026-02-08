@@ -18,7 +18,7 @@ import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.KeyBinds;
 import top.ribs.scguns.client.util.PropertyHelper;
 import top.ribs.scguns.common.GripType;
@@ -27,7 +27,7 @@ import top.ribs.scguns.common.ReloadType;
 import top.ribs.scguns.compat.PlayerReviveHelper;
 import top.ribs.scguns.debug.Debug;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.C2SMessageAim;
 import top.ribs.scguns.util.GunEnchantmentHelper;
@@ -167,7 +167,7 @@ public class AimingHandler
         }
         wasKeyPressed = currentKeyPressed;
 
-        if(ScorchedGuns.controllableLoaded)
+        if(NeoScorchedGunsMain.controllableLoaded)
         {
             boolean controllerAiming = ControllerHandler.isAiming();
             if(toggleAdsEnabled)

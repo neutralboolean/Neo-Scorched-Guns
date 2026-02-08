@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import top.ribs.scguns.client.handler.AimingHandler;
 import top.ribs.scguns.client.handler.GunRenderingHandler;
 import top.ribs.scguns.common.Gun;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 
 /**

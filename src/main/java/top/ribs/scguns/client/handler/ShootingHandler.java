@@ -20,16 +20,14 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animation.AnimationController;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.KeyBinds;
 import top.ribs.scguns.common.*;
-import top.ribs.scguns.common.network.ServerPlayHandler;
 import top.ribs.scguns.compat.PlayerReviveHelper;
-import top.ribs.scguns.event.GunEventBus;
 import top.ribs.scguns.event.GunFireEvent;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.BayonetItem;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.attachment.impl.BayonetItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.animated.AnimatedDualWieldGunItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
 import top.ribs.scguns.network.PacketHandler;
@@ -172,7 +170,7 @@ public class ShootingHandler
                 Gun modifiedGun = gunItem.getModifiedGun(heldItem);
 
                 boolean shouldShoot = KeyBinds.getShootMapping().isDown() || (burstCounter > 0 && Gun.hasBurstFire(heldItem));
-                if (ScorchedGuns.controllableLoaded) {
+                if (NeoScorchedGunsMain.controllableLoaded) {
                     shouldShoot |= ControllerHandler.isShooting();
                 }
 

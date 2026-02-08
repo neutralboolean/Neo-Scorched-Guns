@@ -6,7 +6,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.item.BlueprintItem;
+import top.ribs.scguns.item.blueprint.BlueprintItem;
 
 public class C2SMessageClearBlueprintRecipe extends PlayMessage<C2SMessageClearBlueprintRecipe> {
     private InteractionHand hand;

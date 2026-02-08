@@ -1,6 +1,6 @@
 package top.ribs.scguns.item.attachment;
 
-import top.ribs.scguns.item.ScopeItem;
+import top.ribs.scguns.item.attachment.impl.ScopeItem;
 import top.ribs.scguns.item.attachment.impl.Scope;
 
 /**

@@ -8,9 +8,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.ScorchedGuns;
 import top.ribs.scguns.common.Gun;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 public class C2SMessageReloadByproduct extends PlayMessage<C2SMessageReloadByproduct> {
     private static final float BYPRODUCT_CHANCE = 0.75f;

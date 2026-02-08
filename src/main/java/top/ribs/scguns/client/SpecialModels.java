@@ -7,12 +7,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public enum SpecialModels {
     POLAR_GENERATOR_WHEEL_1("polar_generator/wheel_1"),
     POLAR_GENERATOR_WHEEL_2("polar_generator/wheel_2"),
@@ -1423,7 +1423,7 @@ COGLOADER_MAIN("cogloader/main"),
      */
     SpecialModels(String modelName)
     {
-        this.modelLocation = new ResourceLocation(Reference.MOD_ID, "special/" + modelName);
+        this.modelLocation = new ResourceLocation(NeoScorchedGunsMain.MODID, "special/" + modelName);
     }
 
     /**

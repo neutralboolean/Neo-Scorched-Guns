@@ -4,9 +4,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.CogKnightEntity;
 
 public class CogKnightRenderer extends MobRenderer<CogKnightEntity, CogKnightModel<CogKnightEntity>> {
@@ -16,7 +15,7 @@ public class CogKnightRenderer extends MobRenderer<CogKnightEntity, CogKnightMod
     }
     @Override
     public ResourceLocation getTextureLocation(CogKnightEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/cog_knight.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/cog_knight.png");
     }
 
     @Override

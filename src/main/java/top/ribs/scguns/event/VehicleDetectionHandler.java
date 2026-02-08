@@ -8,14 +8,13 @@ import net.minecraft.world.entity.animal.horse.AbstractHorse;
 import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class VehicleDetectionHandler {
 
     // Enhanced cache to track both vehicle state and type
@@ -44,12 +43,12 @@ public class VehicleDetectionHandler {
                 String vehicleType = getVehicleType(vehicle);
                 playersInVehicles.put(player.getUUID(), new VehicleInfo(vehicleType, vehicle));
 
-                ScorchedGuns.LOGGER.debug("Player {} mounted {}: {} - Gun poses will be adjusted",
+                NeoScorchedGunsMain.LOGGER.debug("Player {} mounted {}: {} - Gun poses will be adjusted",
                         player.getName().getString(), vehicleType, vehicle.getClass().getSimpleName());
             }
         } else {
             if (playersInVehicles.remove(player.getUUID()) != null) {
-                ScorchedGuns.LOGGER.debug("Player {} dismounted - Gun poses restored to normal",
+                NeoScorchedGunsMain.LOGGER.debug("Player {} dismounted - Gun poses restored to normal",
                         player.getName().getString());
             }
         }

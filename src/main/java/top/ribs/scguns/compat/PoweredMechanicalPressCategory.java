@@ -13,8 +13,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.client.screen.MechanicalPressRecipe;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.screen.PoweredMechanicalPressRecipe;
 import top.ribs.scguns.init.ModBlocks;
 import java.util.List; // Ensure this import is present
@@ -23,8 +22,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public class PoweredMechanicalPressCategory implements IRecipeCategory<PoweredMechanicalPressRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(Reference.MOD_ID, "powered_mechanical_pressing");
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/powered_mechanical_press_gui.png");
+    public static final ResourceLocation UID = new ResourceLocation(NeoScorchedGunsMain.MODID, "powered_mechanical_pressing");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/powered_mechanical_press_gui.png");
     public static final RecipeType<PoweredMechanicalPressRecipe> POWERED_MECHANICAL_PRESS_TYPE = new RecipeType<>(UID, PoweredMechanicalPressRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;

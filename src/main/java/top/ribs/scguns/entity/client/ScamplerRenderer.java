@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.ScamplerEntity;
 
 public class ScamplerRenderer extends MobRenderer<ScamplerEntity, ScamplerModel<ScamplerEntity>> {
@@ -15,7 +15,7 @@ public class ScamplerRenderer extends MobRenderer<ScamplerEntity, ScamplerModel<
 
     @Override
     public ResourceLocation getTextureLocation(ScamplerEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/scampler.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/scampler.png");
     }
 
     @Override

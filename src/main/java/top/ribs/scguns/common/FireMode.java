@@ -1,7 +1,7 @@
 package top.ribs.scguns.common;
 
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,31 +13,31 @@ public record FireMode(ResourceLocation id) {
     /**
      * A fire mode that shoots once per trigger press
      */
-    public static final FireMode SEMI_AUTO = new FireMode(new ResourceLocation(Reference.MOD_ID, "semi_automatic"));
+    public static final FireMode SEMI_AUTO = new FireMode(new ResourceLocation(NeoScorchedGunsMain.MODID, "semi_automatic"));
 
     /**
      * A fire mode that shoots as long as the trigger is held down
      */
-    public static final FireMode AUTOMATIC = new FireMode(new ResourceLocation(Reference.MOD_ID, "automatic"));
+    public static final FireMode AUTOMATIC = new FireMode(new ResourceLocation(NeoScorchedGunsMain.MODID, "automatic"));
 
     /**
      * A fire mode that shoots once per cooldown
      */
-    public static final FireMode PULSE = new FireMode(new ResourceLocation(Reference.MOD_ID, "pulse"));
+    public static final FireMode PULSE = new FireMode(new ResourceLocation(NeoScorchedGunsMain.MODID, "pulse"));
     /**
      * A fire mode that shoots a continuous beam
      */
-    public static final FireMode BEAM = new FireMode(new ResourceLocation(Reference.MOD_ID, "beam"));
+    public static final FireMode BEAM = new FireMode(new ResourceLocation(NeoScorchedGunsMain.MODID, "beam"));
 
     /**
      * A fire mode that shoots a single beam per trigger press
      */
-    public static final FireMode SEMI_BEAM = new FireMode(new ResourceLocation(Reference.MOD_ID, "semi_beam"));
+    public static final FireMode SEMI_BEAM = new FireMode(new ResourceLocation(NeoScorchedGunsMain.MODID, "semi_beam"));
 
     /**
      * A fire mode that shoots a burst of bullets
      */
-    public static final FireMode BURST = new FireMode(new ResourceLocation(Reference.MOD_ID, "burst"));
+    public static final FireMode BURST = new FireMode(new ResourceLocation(NeoScorchedGunsMain.MODID, "burst"));
 
 
     /**

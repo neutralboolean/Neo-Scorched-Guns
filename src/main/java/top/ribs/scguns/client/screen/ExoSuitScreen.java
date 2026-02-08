@@ -10,12 +10,12 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.item.animated.ExoSuitItem;
 
 public class ExoSuitScreen extends AbstractContainerScreen<ExoSuitMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Reference.MOD_ID, "textures/gui/exosuit_gui.png");
+            new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/exosuit_gui.png");
 
     public ExoSuitScreen(ExoSuitMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);

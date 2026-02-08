@@ -4,7 +4,6 @@ import com.mrcrayfish.framework.api.client.FrameworkClientAPI;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.OptionsList;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.gui.screens.MouseSettingsScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -17,18 +16,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.*;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.util.ObfuscationReflectionHelper;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
 import org.lwjgl.glfw.GLFW;
-import top.ribs.scguns.ScorchedGuns;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.handler.*;
 import top.ribs.scguns.client.render.block.*;
 import top.ribs.scguns.client.render.curios.AmmoBoxRenderer;
@@ -44,8 +36,8 @@ import top.ribs.scguns.debug.client.screen.EditorScreen;
 import top.ribs.scguns.entity.client.*;
 import top.ribs.scguns.entity.monster.BeaconProjectileEntity;
 import top.ribs.scguns.init.*;
-import top.ribs.scguns.item.AmmoBoxItem;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.AmmoBoxItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.*;
 import top.ribs.scguns.util.GunModifierHelper;
@@ -56,12 +48,13 @@ import java.lang.reflect.Field;
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, value = Dist.CLIENT)
+@Mod(value = NeoScorchedGunsMain.MODID, dist = Dist.CLIENT)
 public class ClientHandler {
     private static Field mouseOptionsField;
     private static double currentScopeSensitivityModifier = 1.0;
     private static boolean isCurrentlyScoped = false;
     private static double originalMouseSensitivity = -1;
+
     public static void registerClientHandlers(IEventBus bus) {
         FrameworkClientAPI.registerDataLoader(MetaLoader.getInstance());
        // onRegisterCreativeTab(bus);
@@ -70,9 +63,8 @@ public class ClientHandler {
         bus.addListener(ClientHandler::onRegisterReloadListener);
         bus.addListener(ClientHandler::registerAdditional);
         bus.addListener(ClientHandler::onClientSetup);
-        MinecraftForge.EVENT_BUS.register(HUDRenderHandler.class);
+        NeoForge.EVENT_BUS.register(HUDRenderHandler.class);
     }
-    @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
             updateMouseSensitivity();
@@ -268,7 +260,7 @@ public class ClientHandler {
         MinecraftForge.EVENT_BUS.register(SoundHandler.get());
         MinecraftForge.EVENT_BUS.register(new PlayerModelHandler());
 
-        if (ScorchedGuns.controllableLoaded) {
+        if (NeoScorchedGunsMain.controllableLoaded) {
             ControllerHandler.init();
             GunButtonBindings.register();
         }

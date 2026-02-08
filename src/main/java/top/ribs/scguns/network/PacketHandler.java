@@ -4,7 +4,7 @@ import com.mrcrayfish.framework.api.FrameworkAPI;
 import com.mrcrayfish.framework.api.network.FrameworkNetwork;
 import com.mrcrayfish.framework.api.network.MessageDirection;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.network.message.*;
 
 public class PacketHandler
@@ -13,7 +13,7 @@ public class PacketHandler
 
     public static void init()
     {
-        playChannel = FrameworkAPI.createNetworkBuilder(new ResourceLocation(Reference.MOD_ID, "play"), 1)
+        playChannel = FrameworkAPI.createNetworkBuilder(new ResourceLocation(NeoScorchedGunsMain.MODID, "play"), 1)
                 .registerPlayMessage(C2SMessageOffhandMelee.class, MessageDirection.PLAY_SERVER_BOUND)
                 .registerPlayMessage(C2SMessageSetBlueprintRecipe.class, MessageDirection.PLAY_SERVER_BOUND)
                 .registerPlayMessage(C2SMessageToggleExoSuitPower.class, MessageDirection.PLAY_SERVER_BOUND)

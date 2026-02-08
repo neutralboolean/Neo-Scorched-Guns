@@ -9,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import top.ribs.scguns.entity.weapon.ScGunsWeapon;
 import top.ribs.scguns.init.ModItems;
 import top.ribs.scguns.interfaces.IEntityCanReload;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 public abstract class ScGunsGunAttackGoal<T extends Mob> extends Goal {
     protected final T shooter;

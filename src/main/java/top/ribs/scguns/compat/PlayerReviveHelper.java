@@ -1,6 +1,6 @@
 package top.ribs.scguns.compat;
 
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import net.minecraft.world.entity.player.Player;
 
 import java.lang.reflect.InvocationTargetException;
@@ -17,7 +17,7 @@ public class PlayerReviveHelper
 
     public static boolean isBleeding(Player player)
     {
-        if(!ScorchedGuns.playerReviveLoaded || disable)
+        if(!NeoScorchedGunsMain.playerReviveLoaded || disable)
             return false;
 
         try

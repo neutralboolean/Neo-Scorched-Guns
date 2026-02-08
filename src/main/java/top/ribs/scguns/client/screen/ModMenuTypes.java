@@ -10,13 +10,13 @@ import net.minecraftforge.network.IContainerFactory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.screen.widget.ThermolithMenu;
 
 
 public class ModMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
-            DeferredRegister.create(ForgeRegistries.MENU_TYPES, Reference.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.MENU_TYPES, NeoScorchedGunsMain.MODID);
     public static final RegistryObject<MenuType<AmmoBoxMenu>> AMMO_BOX =
             registerMenuType("ammo_box", AmmoBoxMenu::new);
     public static final RegistryObject<MenuType<ShellCatcherModuleMenu>> SHELL_CATCHER_MODULE =

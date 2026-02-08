@@ -4,7 +4,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -24,11 +24,11 @@ public class ModTags
         public static final TagKey<Block> TANK_BREAKABLE = tag("tank_breakable");
         private static TagKey<Block> tag(String name)
         {
-            return BlockTags.create(new ResourceLocation(Reference.MOD_ID, name));
+            return BlockTags.create(new ResourceLocation(NeoScorchedGunsMain.MODID, name));
         }
         private static TagKey<Block> tag()
         {
-            return BlockTags.create(new ResourceLocation(Reference.MOD_ID, "fragile"));
+            return BlockTags.create(new ResourceLocation(NeoScorchedGunsMain.MODID, "fragile"));
         }
     }
 
@@ -57,7 +57,7 @@ public class ModTags
 
         private static TagKey<Item> tag(String name)
         {
-            return ItemTags.create(new ResourceLocation(Reference.MOD_ID, name));
+            return ItemTags.create(new ResourceLocation(NeoScorchedGunsMain.MODID, name));
         }
     }
     public static class Entities
@@ -90,7 +90,7 @@ public class ModTags
 
         public static TagKey<EntityType<?>> tag(String name)
         {
-            return TagKey.create(Registries.ENTITY_TYPE,new ResourceLocation(Reference.MOD_ID, name));
+            return TagKey.create(Registries.ENTITY_TYPE,new ResourceLocation(NeoScorchedGunsMain.MODID, name));
         }
     }
 }

@@ -5,17 +5,15 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.ScorchedGuns;
-import top.ribs.scguns.item.EnergyGunItem;
-import top.ribs.scguns.item.GunItem;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import top.ribs.scguns.NeoScorchedGunsMain;
+import top.ribs.scguns.item.gun.EnergyGunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Reference.MOD_ID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, NeoScorchedGunsMain.MODID);
 
     public static final RegistryObject<CreativeModeTab> SCORCHED_GUNS_TAB = CREATIVE_MODE_TABS.register("scorched_guns_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.M3_CARABINE.get()))
@@ -552,6 +550,7 @@ public class ModCreativeModeTabs {
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
+
     public static class CreativeTabHelper {
         public static void addItemWithFullAmmo(CreativeModeTab.Output output, Item item) {
             if (item instanceof GunItem gunItem) {

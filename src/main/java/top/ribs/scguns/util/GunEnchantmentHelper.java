@@ -10,7 +10,7 @@ import net.minecraft.world.phys.Vec3;
 import top.ribs.scguns.cache.HotBarrelCache;
 import top.ribs.scguns.common.*;
 import top.ribs.scguns.init.ModEnchantments;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.particles.TrailData;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;

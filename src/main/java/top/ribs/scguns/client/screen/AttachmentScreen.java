@@ -21,19 +21,18 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.SwordItem;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.ModList;
 import org.joml.Matrix4f;
 import org.lwjgl.glfw.GLFW;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.handler.GunRenderingHandler;
 import top.ribs.scguns.client.screen.widget.MiniButton;
 import top.ribs.scguns.client.util.RenderUtil;
 import top.ribs.scguns.common.container.AttachmentContainer;
 import top.ribs.scguns.common.container.slot.AttachmentSlot;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.attachment.IAttachment;
 
 import java.util.ArrayList;
@@ -316,7 +315,7 @@ public class AttachmentScreen extends AbstractContainerScreen<AttachmentContaine
 
     private void openConfigScreen()
     {
-        ModList.get().getModContainerById(Reference.MOD_ID).ifPresent(container ->
+        ModList.get().getModContainerById(NeoScorchedGunsMain.MODID).ifPresent(container ->
         {
             Screen screen = container.getCustomExtension(ConfigScreenHandler.ConfigScreenFactory.class).map(function -> function.screenFunction().apply(this.minecraft, null)).orElse(null);
             if(screen != null)

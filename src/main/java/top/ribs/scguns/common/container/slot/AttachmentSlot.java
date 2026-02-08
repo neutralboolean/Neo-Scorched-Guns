@@ -9,8 +9,8 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.container.AttachmentContainer;
 import top.ribs.scguns.init.ModSounds;
-import top.ribs.scguns.item.*;
 import top.ribs.scguns.item.attachment.IAttachment;
+import top.ribs.scguns.item.gun.GunItem;
 
 /**
  * Author: MrCrayfish

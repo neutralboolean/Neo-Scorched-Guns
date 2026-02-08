@@ -13,7 +13,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.client.screen.PoweredMaceratorRecipe;
 import top.ribs.scguns.init.ModBlocks;
 import java.util.List;
@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public class PoweredMaceratorCategory implements IRecipeCategory<PoweredMaceratorRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(Reference.MOD_ID, "powered_macerating");
-    public static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/powered_macerator_gui.png");
+    public static final ResourceLocation UID = new ResourceLocation(NeoScorchedGunsMain.MODID, "powered_macerating");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/powered_macerator_gui.png");
     public static final RecipeType<PoweredMaceratorRecipe> POWERED_MACERATING_TYPE = new RecipeType<>(UID, PoweredMaceratorRecipe.class);
     private final IDrawable background;
     private final IDrawable icon;

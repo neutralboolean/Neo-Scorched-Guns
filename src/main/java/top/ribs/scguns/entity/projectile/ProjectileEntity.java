@@ -47,7 +47,7 @@ import net.minecraftforge.entity.IEntityAdditionalSpawnData;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.valkyrienskies.mod.common.world.RaycastUtilsKt;
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.attributes.SCAttributes;
 import top.ribs.scguns.block.NitroKegBlock;
 import top.ribs.scguns.block.PowderKegBlock;
@@ -62,7 +62,7 @@ import top.ribs.scguns.event.GunProjectileHitEvent;
 import top.ribs.scguns.interfaces.IDamageable;
 import top.ribs.scguns.interfaces.IExplosionDamageable;
 import top.ribs.scguns.interfaces.IHeadshotBox;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.item.animated.AnimatedDiamondSteelGunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageBlood;
@@ -988,7 +988,7 @@ public class ProjectileEntity extends Entity implements IEntityAdditionalSpawnDa
      */
     static BlockHitResult rayTraceBlocks(Level world, ClipContext context, Predicate<BlockState> ignorePredicate) {
         return performRayTrace(context, (rayTraceContext, blockPos) -> {
-            if (ScorchedGuns.valkyrienSkiesLoaded)
+            if (NeoScorchedGunsMain.valkyrienSkiesLoaded)
                 return RaycastUtilsKt.clipIncludeShips(world, context); ///Thanks Miga!
             BlockState blockState = world.getBlockState(blockPos);
             if (ignorePredicate.test(blockState)) return null;

@@ -25,10 +25,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.energy.IEnergyStorage;
@@ -45,8 +42,7 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animation.AnimationController;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.ScorchedGuns;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.block.SulfurVentBlock;
 import top.ribs.scguns.cache.HotBarrelCache;
 import top.ribs.scguns.client.handler.MeleeAttackHandler;
@@ -59,9 +55,11 @@ import top.ribs.scguns.init.*;
 import top.ribs.scguns.interfaces.IAirGun;
 import top.ribs.scguns.interfaces.IEnergyGun;
 import top.ribs.scguns.item.*;
-import top.ribs.scguns.item.ammo_boxes.EmptyCasingPouchItem;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.EmptyCasingPouchItem;
 import top.ribs.scguns.item.animated.*;
 import top.ribs.scguns.item.attachment.IAttachment;
+import top.ribs.scguns.item.gun.GunItem;
+import top.ribs.scguns.item.gun.NonUnderwaterGunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.C2SMessageReload;
 import top.ribs.scguns.network.message.S2CMessageHotBarrelSync;
@@ -70,7 +68,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 import java.util.List;
 
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class GunEventBus {
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
@@ -138,7 +136,7 @@ public class GunEventBus {
                     }
                 }
             } catch (Exception e) {
-                ScorchedGuns.LOGGER.error("Error in preShoot animation handling: " + e.getMessage());
+                NeoScorchedGunsMain.LOGGER.error("Error in preShoot animation handling: " + e.getMessage());
             }
         }
         if (heldItem.getItem() instanceof GunItem gunItem) {
@@ -171,7 +169,7 @@ public class GunEventBus {
                     }
                 }
 
-                if (ScorchedGuns.createLoaded && heldItem.getItem() instanceof IAirGun) {
+                if (NeoScorchedGunsMain.createLoaded && heldItem.getItem() instanceof IAirGun) {
                     List<ItemStack> backtanks = BacktankUtil.getAllWithAir(player);
                     if (backtanks.isEmpty()) {
                         player.displayClientMessage(Component.translatable("message.airgun.no_air")

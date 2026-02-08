@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.event.GunEventBus;
 import top.ribs.scguns.init.ModEnchantments;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 import java.util.Objects;
 

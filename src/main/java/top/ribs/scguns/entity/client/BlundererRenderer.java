@@ -5,9 +5,8 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.entity.monster.BlundererEntity;
-import top.ribs.scguns.entity.monster.HiveEntity;
 
 public class BlundererRenderer extends MobRenderer<BlundererEntity, BlundererModel<BlundererEntity>> {
     public BlundererRenderer(EntityRendererProvider.Context pContext) {
@@ -16,7 +15,7 @@ public class BlundererRenderer extends MobRenderer<BlundererEntity, BlundererMod
 
     @Override
     public ResourceLocation getTextureLocation(BlundererEntity pEntity) {
-        return new ResourceLocation(Reference.MOD_ID, "textures/entity/blunderer.png");
+        return new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/entity/blunderer.png");
     }
 
     @Override

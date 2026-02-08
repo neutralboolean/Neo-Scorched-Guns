@@ -27,17 +27,16 @@ import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animation.AnimationController;
 import top.ribs.scguns.Config;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.cache.HotBarrelCache;
 import top.ribs.scguns.common.ChargeHandler;
 import top.ribs.scguns.common.FireMode;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.init.ModEnchantments;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
-import top.ribs.scguns.item.ammo_boxes.CreativeAmmoBoxItem;
+import top.ribs.scguns.item.gun.GunItem;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.CreativeAmmoBoxItem;
 import top.ribs.scguns.item.animated.AnimatedGunItem;
-import top.ribs.scguns.item.exosuit.RabbitModuleItem;
 import top.ribs.scguns.util.GunModifierHelper;
 import top.theillusivec4.curios.api.CuriosApi;
 import top.ribs.scguns.common.exosuit.ExoSuitData;
@@ -50,13 +49,13 @@ import net.minecraftforge.energy.IEnergyStorage;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class HUDRenderHandler {
-    private static final ResourceLocation CHARGE_BAR = new ResourceLocation(Reference.MOD_ID, "textures/gui/charging_bar.png");
-    private static final ResourceLocation FILL_BAR = new ResourceLocation(Reference.MOD_ID, "textures/gui/fill_bar.png");
-    private static final ResourceLocation MELEE_ATTACK_INDICATOR_PROGRESS = new ResourceLocation(Reference.MOD_ID, "textures/gui/melee_attack_indicator_progress.png");
-    private static final ResourceLocation MELEE_ATTACK_INDICATOR_BACKGROUND = new ResourceLocation(Reference.MOD_ID, "textures/gui/melee_attack_indicator_background.png");
-    public static final ResourceLocation HOT_BARREL_TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/hot_barrel.png");
+    private static final ResourceLocation CHARGE_BAR = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/charging_bar.png");
+    private static final ResourceLocation FILL_BAR = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/fill_bar.png");
+    private static final ResourceLocation MELEE_ATTACK_INDICATOR_PROGRESS = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/melee_attack_indicator_progress.png");
+    private static final ResourceLocation MELEE_ATTACK_INDICATOR_BACKGROUND = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/melee_attack_indicator_background.png");
+    public static final ResourceLocation HOT_BARREL_TEXTURE = new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/hot_barrel.png");
 
     static int meleeCooldown = 0;
     static int maxMeleeCooldown = 0;

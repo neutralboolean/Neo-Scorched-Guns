@@ -10,13 +10,13 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.items.IItemHandlerModifiable;
-import top.ribs.scguns.Reference;
-import top.ribs.scguns.item.ammo_boxes.DishesPouch;
+import top.ribs.scguns.NeoScorchedGunsMain;
+import top.ribs.scguns.item.ammo.impl.ammo_boxes.DishesPouch;
 import top.theillusivec4.curios.api.CuriosApi;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class DishesEventHandler {
 
     @SubscribeEvent

@@ -7,11 +7,11 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 
 public class AmmoModuleScreen extends AbstractContainerScreen<AmmoModuleMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Reference.MOD_ID, "textures/gui/shell_catcher_module.png");
+            new ResourceLocation(NeoScorchedGunsMain.MODID, "textures/gui/shell_catcher_module.png");
 
     public AmmoModuleScreen(AmmoModuleMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);

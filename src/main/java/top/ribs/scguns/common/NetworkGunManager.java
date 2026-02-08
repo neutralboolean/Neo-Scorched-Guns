@@ -4,8 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mrcrayfish.framework.api.data.login.ILoginData;
 import net.minecraft.Util;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -13,18 +13,11 @@ import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.event.OnDatapackSyncEvent;
-import net.minecraftforge.event.server.ServerStoppedEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.Validate;
-import top.ribs.scguns.ScorchedGuns;
-import top.ribs.scguns.Reference;
+import top.ribs.scguns.NeoScorchedGunsMain;
 import top.ribs.scguns.annotation.Validator;
 import top.ribs.scguns.client.util.Easings;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.network.PacketHandler;
 import top.ribs.scguns.network.message.S2CMessageUpdateGuns;
 
@@ -37,7 +30,7 @@ import java.util.*;
 /**
  * Author: MrCrayfish
  */
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID)
+@Mod.EventBusSubscriber(modid = NeoScorchedGunsMain.MODID)
 public class NetworkGunManager extends SimplePreparableReloadListener<Map<GunItem, Gun>>
 {
     private static final int FILE_TYPE_LENGTH_VALUE = ".json".length();
@@ -61,15 +54,15 @@ public class NetworkGunManager extends SimplePreparableReloadListener<Map<GunIte
     protected Map<GunItem, Gun> prepare(ResourceManager manager, ProfilerFiller profiler)
     {
         Map<GunItem, Gun> map = new HashMap<>();
-        ForgeRegistries.ITEMS.getValues().stream().filter(item -> item instanceof GunItem).forEach(item ->
+        BuiltInRegistries.ITEM.stream().filter(item -> item instanceof GunItem).forEach(item ->
         {
-            ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
+            ResourceLocation id = BuiltInRegistries.ITEM.getKey(item);
             if(id != null)
             {
                 List<ResourceLocation> resources = new ArrayList<>(manager.listResources("guns", (fileName) -> fileName.getPath().endsWith(id.getPath() + ".json")).keySet());
                 resources.sort((r1, r2) -> {
                     if(r1.getNamespace().equals(r2.getNamespace())) return 0;
-                    return r2.getNamespace().equals(Reference.MOD_ID) ? 1 : -1;
+                    return r2.getNamespace().equals(NeoScorchedGunsMain.MODID) ? 1 : -1;
                 });
                 resources.forEach(resourceLocation ->
                 {
@@ -95,18 +88,18 @@ public class NetworkGunManager extends SimplePreparableReloadListener<Map<GunIte
                             }
                             else
                             {
-                                ScorchedGuns.LOGGER.error("Couldn't load data file {} as it is missing or malformed. Using default gun data", resourceLocation);
+                                NeoScorchedGunsMain.LOGGER.error("Couldn't load data file {} as it is missing or malformed. Using default gun data", resourceLocation);
                                 map.putIfAbsent((GunItem) item, new Gun());
                             }
                         }
                         catch(InvalidObjectException e)
                         {
-                            ScorchedGuns.LOGGER.error("Missing required properties for {}", resourceLocation);
+                            NeoScorchedGunsMain.LOGGER.error("Missing required properties for {}", resourceLocation);
                             e.printStackTrace();
                         }
                         catch(IOException e)
                         {
-                            ScorchedGuns.LOGGER.error("Couldn't parse data file {}", resourceLocation);
+                            NeoScorchedGunsMain.LOGGER.error("Couldn't parse data file {}", resourceLocation);
                         }
                         catch(IllegalAccessException e)
                         {
@@ -124,7 +117,7 @@ public class NetworkGunManager extends SimplePreparableReloadListener<Map<GunIte
     {
         ImmutableMap.Builder<ResourceLocation, Gun> builder = ImmutableMap.builder();
         objects.forEach((item, gun) -> {
-            builder.put(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item)), gun);
+            builder.put(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item)), gun);
             item.setGun(new Supplier(gun));
         });
         this.registeredGuns = builder.build();
@@ -184,7 +177,7 @@ public class NetworkGunManager extends SimplePreparableReloadListener<Map<GunIte
         {
             for(Map.Entry<ResourceLocation, Gun> entry : registeredGuns.entrySet())
             {
-                Item item = ForgeRegistries.ITEMS.getValue(entry.getKey());
+                Item item = BuiltInRegistries.ITEM.get(entry.getKey());
                 if(!(item instanceof GunItem))
                 {
                     return false;

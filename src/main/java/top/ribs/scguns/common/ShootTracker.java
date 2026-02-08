@@ -1,8 +1,7 @@
 package top.ribs.scguns.common;
 
 import com.google.common.collect.Maps;
-import top.ribs.scguns.attributes.SCAttributes;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 import top.ribs.scguns.util.GunEnchantmentHelper;
 import top.ribs.scguns.util.GunModifierHelper;
 import net.minecraft.world.entity.player.Player;

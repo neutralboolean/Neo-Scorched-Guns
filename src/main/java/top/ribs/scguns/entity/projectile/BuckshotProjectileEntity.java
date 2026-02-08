@@ -2,8 +2,6 @@ package top.ribs.scguns.entity.projectile;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -14,9 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.init.ModItems;
-import top.ribs.scguns.item.GunItem;
-import top.ribs.scguns.util.GunEnchantmentHelper;
-import top.ribs.scguns.util.GunModifierHelper;
+import top.ribs.scguns.item.gun.GunItem;
 
 public class BuckshotProjectileEntity extends ProjectileEntity {
     private static final float BULLET_DROP_CHANCE = 0.0F;

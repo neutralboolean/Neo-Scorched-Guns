@@ -1,6 +1,6 @@
 package top.ribs.scguns.item.attachment;
 
-import top.ribs.scguns.item.BarrelItem;
+import top.ribs.scguns.item.attachment.impl.BarrelItem;
 import top.ribs.scguns.item.attachment.impl.Barrel;
 
 /**

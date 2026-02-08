@@ -10,7 +10,7 @@ import top.ribs.scguns.client.handler.ReloadHandler;
 import top.ribs.scguns.common.Gun;
 import top.ribs.scguns.common.ReloadType;
 import top.ribs.scguns.init.ModSyncedDataKeys;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 /**
  * Author: MrCrayfish

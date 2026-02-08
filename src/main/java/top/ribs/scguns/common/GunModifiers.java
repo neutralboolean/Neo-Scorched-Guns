@@ -2,7 +2,7 @@ package top.ribs.scguns.common;
 
 import net.minecraft.world.item.ItemStack;
 import top.ribs.scguns.interfaces.IGunModifier;
-import top.ribs.scguns.item.GunItem;
+import top.ribs.scguns.item.gun.GunItem;
 
 
 /**
